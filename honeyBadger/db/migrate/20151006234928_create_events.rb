@@ -1,11 +1,11 @@
 class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
-      t.integer :ID
+      t.integer :eventID
       t.string :creator
       t.string :coordinates
-      t.Date :date
-      t.Time :startTime
+      t.datetime :date
+      t.datetime :startTime
       t.string :duration
       t.string :description
       t.string :category
