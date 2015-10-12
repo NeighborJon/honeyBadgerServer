@@ -6,13 +6,13 @@ class CreateUsers < ActiveRecord::Migration
       t.string :lName
       t.string :email
       t.string :description
-      t.double :shenaniganExp
-      t.double :fitnessExp
-      t.double :educationExp
-      t.double :philanthropyExp
+      t.float :shenaniganExp
+      t.float :fitnessExp
+      t.float :educationExp
+      t.float :philanthropyExp
       t.string :picture
-      t.array :friendsList
-      t.array :ignoreList
+   #   t.array :friendsList
+   #   t.array :ignoreList
 
       t.timestamps null: false
     end
