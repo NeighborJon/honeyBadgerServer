@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  ID: MyString
-  password: 
+  user_id: 
+  password: MyString
+  hashkey: MyString
 
 two:
-  ID: MyString
-  password: 
+  user_id: 
+  password: MyString
+  hashkey: MyString
