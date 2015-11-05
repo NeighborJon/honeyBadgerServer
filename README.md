@@ -1,7 +1,7 @@
 # honeyBadgerServer
 -Requests to code for
 
--Map/Home Page
+-Map/Home Page  
   1.Send all event information for the events where the X & Y coordinates are within the coords sent in the request
   
 -Profile Page
@@ -10,7 +10,7 @@
   3. Send all messages that the sender ID matches the actual user. Same situation as #2
 
 -Events
-  1. Send all events, specifically send the :id, :title, :datetime, :description
+  1. Send all events, specifically send the :id, :title, :datetime, :description, for events make sure to check to see that only the events with the private boolean marked false are shown.
 
 -View Event
   1. Send all event information that matches the :id of the event being viewed
