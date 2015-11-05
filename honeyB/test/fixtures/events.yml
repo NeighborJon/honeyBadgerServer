@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  creator: MyString
+  xVal: MyString
+  yVal: MyString
+  start: 2015-11-03 17:36:15
+  duration: MyString
+  description: MyString
+  category: MyString
+  minReq: 1
+
+two:
+  creator: MyString
+  xVal: MyString
+  yVal: MyString
+  start: 2015-11-03 17:36:15
+  duration: MyString
+  description: MyString
+  category: MyString
+  minReq: 1
