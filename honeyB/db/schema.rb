@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20151103234316) do
 
   create_table "accounts", force: :cascade do |t|
-    t.string   "accountID"
+    t.string   "user_ID"
     t.string   "email"
     t.string   "password"
     t.string   "auth_token"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20151103234316) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.string   "title"
     t.string   "creator"
     t.string   "xVal"
     t.string   "yVal"
@@ -31,21 +32,21 @@ ActiveRecord::Schema.define(version: 20151103234316) do
     t.string   "description"
     t.string   "category"
     t.integer  "minReq"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "private",     default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string   "messageID"
     t.string   "user_ID"
     t.string   "recieverID"
     t.string   "message"
-    t.datetime "sent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "userName"
     t.string   "fName"
     t.string   "lName"
     t.string   "email"
