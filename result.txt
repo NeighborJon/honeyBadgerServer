@@ -1,0 +1,2 @@
+Updating installed gems
+Updating sass
