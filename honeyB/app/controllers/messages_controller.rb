@@ -11,6 +11,25 @@ class MessagesController < ApplicationController
 
   # GET /messages/1
   # GET /messages/1.json
+  
+  def recievedMessages
+  	message = Message.find_by user_ID: '1'
+  	if message != nil
+  		render json: message
+  	else
+  		render json: "No recieved messages"
+  	end
+  end
+  
+  def sentMessages
+  	message = Message.find_by user_ID: '2'
+  	if message != nil
+  		render json: message
+  	else
+  		render json: "No recieved messages"
+  	end
+  end
+  
   def show
     render json: @message
   end
@@ -54,6 +73,6 @@ class MessagesController < ApplicationController
     end
 
     def message_params
-      params.require(:message).permit(:senderID, :recieverID, :message, :sent)
+      params.require(:message).permit(:user_ID, :recieverID, :message)
     end
 end

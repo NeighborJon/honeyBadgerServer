@@ -15,6 +15,7 @@ a1 = Account.create(user_ID: '1', email: 'user@example.com', password: 'tamale24
 a2 = Account.create(user_ID: '2', email: 'user2@example.com', password: 'tamale24')
 
 m1 = Message.create(user_ID: '1', recieverID: '2', message: 'Get a fucking move on it')
+m2 = Message.create(user_ID: '2', recieverID: '1', message: 'We got a fucking move on it')
 
 5.times do |i|
 	Event.create(title: "Event##{i}",
