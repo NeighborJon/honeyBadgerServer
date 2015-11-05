@@ -1,0 +1,25 @@
+<%= form_for :event, url: events_path do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  
+  <p>
+    <%= f.label :User %><br>
+    <%= f.text_field :user_id %>
+  </p>
+  
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+ 
+  <p>
+    <%= f.label "start time" %><br>
+    <%= f.text_field :startTime %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

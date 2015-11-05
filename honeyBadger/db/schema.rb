@@ -15,17 +15,17 @@ ActiveRecord::Schema.define(version: 20151031202944) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "eventID"
+    t.string   "title"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "date"
     t.datetime "startTime"
-    t.string   "duration"
+    t.datetime "endTime"
     t.string   "description"
     t.string   "category"
     t.integer  "minRequired"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "private",     default: true
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20151031202944) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "user_accounts", ["user_id"], name: "index_user_accounts_on_user_id"
+  add_index "user_accounts", ["user_id"], name: "index_user_accounts_on_user_id", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

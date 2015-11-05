@@ -2,15 +2,15 @@ class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
       t.belongs_to :user, index: true
-      t.integer :eventID
+      t.string :title
       t.float :latitude
       t.float :longitude
-      t.datetime :date
       t.datetime :startTime
-      t.string :duration
+      t.datetime :endTime
       t.string :description
       t.string :category
       t.integer :minRequired
+      t.boolean :private, default: true
 
       t.timestamps null: false
     end
