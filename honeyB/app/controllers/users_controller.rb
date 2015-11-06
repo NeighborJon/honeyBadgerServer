@@ -18,12 +18,22 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
-
-    if @user.save
-      render json: @user, status: :created, location: @user
+    if User.exists?(user_check_params)
+    	render :json => '{error : {"code" : 100, "message" : "email invalid or already taken"}}'
     else
-      render json: @user.errors, status: :unprocessable_entity
+    	@user = User.new(user_params)
+    	@account = Account.new(user_ID: @user.id, email: :email, password: :password)
+    	
+    	if @account.save
+    		if @user.save
+      			render json: @user, status: :created, location: @user
+    		else
+    			@account.destroy
+     			render json: @user.errors, status: :unprocessable_entity
+    		end
+    	else
+			render json: @account.errors, status: :unprocessable_entity    	
+    	end
     end
   end
 
@@ -54,6 +64,14 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:fName, :lName, :email, :password, :auth_token, :description, :shenaniganExp, :fitnessExp, :educationExp, :philanthropyExp)
+      params.require(:user).permit(:fName, :lName, :email, :auth_token, :description, :shenaniganExp, :fitnessExp, :educationExp, :philanthropyExp)
+    end
+    
+    def user_check_params
+      params.require(:user).permit(:email)
+    end
+    
+    def account_params
+    	params.require(:user).permit(:email, :password)
     end
 end
