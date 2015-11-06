@@ -13,7 +13,8 @@ class MessagesController < ApplicationController
   # GET /messages/1.json
   
   def recievedMessages
-  	message = Message.find_by user_ID: '1'
+  #need to add to the end of the URL 'recievedMessages?recieverID=[ID to search for]'
+  	message = Message.where(recieverID: params[:recieverID])
   	if message != nil
   		render json: message
   	else
@@ -22,7 +23,8 @@ class MessagesController < ApplicationController
   end
   
   def sentMessages
-  	message = Message.find_by user_ID: '2'
+  #need to add to the URL 'sentMessages?user_ID=[ID to search for]'
+  	message = Message.where(user_ID: params[:user_ID])
   	if message != nil
   		render json: message
   	else
