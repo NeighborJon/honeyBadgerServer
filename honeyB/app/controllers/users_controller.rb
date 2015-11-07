@@ -18,11 +18,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    if User.exists?(user_check_params)
+    if User.exists?(params[:user][:id])
     	render :json => '{error : {"code" : 100, "message" : "email invalid or already taken"}}'
     else
     	@user = User.new(user_params)
-    	@account = Account.new(user_ID: @user.id, email: :email, password: :password)
+    	@account = @user.build_account(email: @user.email, password: :password)
     	
     	if @account.save
     		if @user.save

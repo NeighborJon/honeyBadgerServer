@@ -20,7 +20,7 @@ rndm = Random.new(1337)
 5.times do |i|
 	user = User.create(fName: "User#{i}", lName: "LastName#{i}", email: "user#{i}@example.com")
 	
-	Account.create(user_ID: user.id, email: user.email, password: "pass123")
+	user.create_account(email: user.email, password: "pass123")
 	
 	user.events.create(title: "Event##{i}",
 					longitude: rndm.rand(38.950000..38.965000),
