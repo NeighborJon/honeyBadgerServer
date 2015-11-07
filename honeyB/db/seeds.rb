@@ -22,10 +22,9 @@ rndm = Random.new(1337)
 	
 	Account.create(user_ID: user.id, email: user.email, password: "pass123")
 	
-	Event.create(title: "Event##{i}",
-					creator: user.id,
-					xVal: rndm.rand(38.950000..38.965000),
-					yVal: -1*rndm.rand(92.331000..92.33400),
+	user.events.create(title: "Event##{i}",
+					longitude: rndm.rand(38.950000..38.965000),
+					latitude: -1*rndm.rand(92.331000..92.33400),
 					start: DateTime.now,
 					description: "It's an event of fun and excitement",)
 end

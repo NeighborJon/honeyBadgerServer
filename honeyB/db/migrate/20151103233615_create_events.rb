@@ -1,11 +1,11 @@
 class CreateEvents < ActiveRecord::Migration
   def change
     create_table :events do |t|
+      t.integer :creator, index: true
       t.string :title
-      t.string :creator
-      t.string :xVal
-      t.string :yVal
-      t.datetime :start
+      t.float :longitude, null:false
+      t.float :latitude, null:false
+      t.datetime :start, null:false
       t.string :duration
       t.string :description
       t.string :category
@@ -14,5 +14,6 @@ class CreateEvents < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+    add_reference :events, :creator, references: :users
   end
 end

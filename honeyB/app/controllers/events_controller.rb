@@ -20,13 +20,17 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
-
-    if @event.save
-      render json: @event, status: :created, location: @event
-    else
-      render json: @event.errors, status: :unprocessable_entity
-    end
+    begin
+    	@user = User.find(params[:event][:creator])
+    	@event = @user.events.new(event_params)
+	
+		if @event.save
+			render json: @event, status: :created, location: @event		
+		end
+	rescue => error
+		#render :json => '{error : {"code" : 200, "message" : "must provide xVal/yVal"}}'
+		render :json => error.message
+	end
   end
 
   # PATCH/PUT /events/1
@@ -56,6 +60,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:creator, :xVal, :yVal, :start, :duration, :description, :category, :minReq)
+      params.require(:event).permit(:creator, :title, :longitude, :latitude, :start, :duration, :description, :category, :minReq, :private)
     end
 end

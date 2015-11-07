@@ -23,11 +23,11 @@ ActiveRecord::Schema.define(version: 20151103234316) do
   end
 
   create_table "events", force: :cascade do |t|
+    t.integer  "creator"
     t.string   "title"
-    t.string   "creator"
-    t.string   "xVal"
-    t.string   "yVal"
-    t.datetime "start"
+    t.float    "longitude",                   null: false
+    t.float    "latitude",                    null: false
+    t.datetime "start",                       null: false
     t.string   "duration"
     t.string   "description"
     t.string   "category"
@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(version: 20151103234316) do
     t.boolean  "private",     default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+    t.integer  "creator_id"
   end
+
+  add_index "events", ["creator"], name: "index_events_on_creator"
 
   create_table "messages", force: :cascade do |t|
     t.string   "user_ID"
