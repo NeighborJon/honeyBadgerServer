@@ -16,6 +16,10 @@ class EventsController < ApplicationController
   
     render json: @event
   end
+  
+  def mapEvents
+  	
+  end
 
   # POST /events
   # POST /events.json

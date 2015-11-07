@@ -2,7 +2,9 @@ class ApplicationController < ActionController::API
 
 	include ActionController::HttpAuthentication::Basic::ControllerMethods
 	include ActionController::HttpAuthentication::Token::ControllerMethods
-	
+	def default_serializer_options
+		{ root: false }
+	end
 	config.force_ssl = true
 
 	#before_filter :authenticate_user_from_token, except: [:token]

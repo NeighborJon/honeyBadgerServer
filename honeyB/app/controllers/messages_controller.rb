@@ -24,11 +24,16 @@ class MessagesController < ApplicationController
   
   def sentMessages
   #need to add to the URL 'sentMessages?user_ID=[ID to search for]'
-  	message = Message.where(user_ID: params[:user_ID])
-  	if message != nil
-  		render json: message
+  	inbox = Array.new
+  	Message.where(user_ID: params[:user_ID]).find_each do |message|
+  		if message != nil
+  			inbox << message
+  		end
+  	end
+  	if inbox.count > 0
+  		render json: inbox
   	else
-  		render json: "No recieved messages"
+  		render json: "No messages"
   	end
   end
   
