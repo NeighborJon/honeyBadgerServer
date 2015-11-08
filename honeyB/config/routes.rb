@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   
   get :token, controller: 'application'
   get :recievedMessages, controller: 'messages'
-  get :sentMessages, controller: 'messages'
   get :mapEvents, controller: 'events'
   
   # The priority is based upon order of creation: first created -> highest priority.

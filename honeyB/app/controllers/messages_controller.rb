@@ -14,18 +14,8 @@ class MessagesController < ApplicationController
   
   def recievedMessages
   #need to add to the end of the URL 'recievedMessages?recieverID=[ID to search for]'
-  	message = Message.where(recieverID: params[:recieverID])
-  	if message != nil
-  		render json: message
-  	else
-  		render json: "No recieved messages"
-  	end
-  end
-  
-  def sentMessages
-  #need to add to the URL 'sentMessages?user_ID=[ID to search for]'
   	inbox = Array.new
-  	Message.where(user_ID: params[:user_ID]).find_each do |message|
+  	message = Message.where(recieverID: params[:recieverID]).find_each do |message|
   		if message != nil
   			inbox << message
   		end
@@ -33,9 +23,10 @@ class MessagesController < ApplicationController
   	if inbox.count > 0
   		render json: inbox
   	else
-  		render json: "No messages"
+  		render json: "No recieved messages"
   	end
   end
+  
   
   def show
     render json: @message

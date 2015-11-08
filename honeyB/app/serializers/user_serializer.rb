@@ -1,5 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :email
+  attributes :id
   
   has_many :messages
+  has_many :events
 end
