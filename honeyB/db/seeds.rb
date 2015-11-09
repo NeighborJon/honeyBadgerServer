@@ -20,18 +20,23 @@ m2 = Message.create(user_ID: '2', recieverID: '1', message: 'We got a fucking mo
 m3 = Message.create(user_ID: '1', recieverID: '2', message: "It's neat how we can talk to each other")
 
 
-5.times do |i|
+10.times do |i|
 	user = User.create(fName: "User#{i}", lName: "LastName#{i}", email: "user#{i}@example.com")
 	
 	user.create_account(email: user.email, password: "pass123")
 	
 	user.events.create(title: "Event##{i}",
-					longitude: rndm.rand(38.950000..38.965000),
-					latitude: -1*rndm.rand(92.331000..92.33400),
+					latitude: rndm.rand(38.950000..38.965000),
+					longitude: -1*rndm.rand(92.331000..92.33400),
 					start: DateTime.now,
 					description: "It's an event of fun and excitement",)
 end
 
 5.times do |i|
 	Message.create(user_ID: "#{i}", recieverID: rndm.rand(1..5), message: "Test Message ##{i}")
+	
+	event = Event.find(1)
+	user = User.find(i+2)
+	
+	event.members << user
 end
