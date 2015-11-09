@@ -29,6 +29,7 @@ class EventsController < ApplicationController
     	@event = @user.events.new(event_params)
 	
 		if @event.save
+			@event.members << @user
 			render json: @event, status: :created, location: @event		
 		end
 	rescue => error
