@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get :token, controller: 'application'
   get :recievedMessages, controller: 'messages'
   get :mapEvents, controller: 'events'
+  post 'events/:id/join', to: 'events#join'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
