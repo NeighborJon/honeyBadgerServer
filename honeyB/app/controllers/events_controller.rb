@@ -37,6 +37,7 @@ class EventsController < ApplicationController
     	@event = @user.events.new(event_params)
 	
 		if @event.save
+			@event.members << @user
 			render json: @event, status: :created, location: @event		
 		end
 	rescue => error
@@ -63,6 +64,19 @@ class EventsController < ApplicationController
     @event.destroy
 
     head :no_content
+  end
+  
+  def join
+  	begin
+  		@event = Event.find(params[:id])
+  		@user = User.find(params[:event][:user_id])
+  	
+  		if @event.members << @user
+  			render json: @event, location: @event
+  		end
+  	rescue => error
+  		render :json => error.message
+  	end
   end
 
   private
