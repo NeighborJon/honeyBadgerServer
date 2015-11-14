@@ -17,7 +17,43 @@ class EventsController < ApplicationController
     render json: @event
   end
   
+  def search
+		eventList = Array.new
+		Event.all.each do |event|
+		eventD = (event.start).strftime("%Y-%B-%d")
+		
+			if params[:eventTitle] != nil
+				if event.title == params[:eventTile]
+					eventList << event
+				end
+				if params[:eventCat] != nil
+					if event.title == params[:eventTitle] && event.category == params[:eventCat]
+						eventList << event
+					end
+				
+					if params[:eventDate] != nil
+						if event.title == params[:eventTile] && event.category == params[:eventCat] && eventD == params[:eventDate]
+							eventList << event
+						end
+					
+						if params[:longMin] != nil && params[:longMax] != nil && params[:latMin] != nil && params[:latMax] != nil
+							if event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude < ((params[:longMin]).to_f) && event.longitude > ((params[:longMax]).to_f)
+								eventList << event
+							end
+						end
+					end
+				end
+			else
+				if event.category == params[:eventCat]
+					eventList << event
+				end
+			end
+		end
+		render json: eventList
+  end
+  
   def mapEvents
+
   	mapList = Array.new 
   	Event.all.each do |event|
   		if event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)

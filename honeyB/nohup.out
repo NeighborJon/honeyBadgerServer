@@ -9018,3 +9018,253 @@ Processing by EventsController#show as HTML
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 2]]
   [1m[35mCACHE (0.0ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 2]]
   [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 2]]
+[2015-11-14 21:24:57] INFO  WEBrick 1.3.1
+[2015-11-14 21:24:57] INFO  ruby 2.2.1 (2015-02-26) [x86_64-linux]
+[2015-11-14 21:24:57] INFO  WEBrick::HTTPServer#start: pid=58321 port=3000
+=> Booting WEBrick
+=> Rails 4.2.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+
+
+Started GET "/users" for 104.166.200.55 at 2015-11-14 21:25:25 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 2]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 2]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 3]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 4]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 4]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 5]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 6]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 6]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 7]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 7]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 8]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 8]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 9]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 9]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 10]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 10]]
+Completed 200 OK in 129ms (Views: 114.4ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/events" for 104.166.200.55 at 2015-11-14 21:25:37 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 10]]
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/events/1" for 104.166.200.55 at 2015-11-14 21:26:27 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 1]]
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 104.166.200.55 at 2015-11-14 21:27:21 +0000
+Processing by EventsController#index as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 10]]
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/events/2/join" for 104.166.200.55 at 2015-11-14 21:28:09 +0000
+Processing by EventsController#join as HTML
+  Parameters: {"event"=>{"id"=>"1", "user_id"=>"2"}, "id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEventMember Exists (0.2ms)[0m  SELECT  1 AS one FROM "event_members" WHERE ("event_members"."user_id" = 2 AND "event_members"."event_id" = 2) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/events/2/join" for 104.166.200.55 at 2015-11-14 21:28:14 +0000
+Processing by EventsController#join as HTML
+  Parameters: {"event"=>{"id"=>"1", "user_id"=>"1"}, "id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEventMember Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "event_members" WHERE ("event_members"."user_id" = 1 AND "event_members"."event_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "event_members" ("event_id", "user_id") VALUES (?, ?)  [["event_id", 2], ["user_id", 1]]
+  [1m[36m (90.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 2]]
+Completed 200 OK in 101ms (Views: 3.7ms | ActiveRecord: 91.3ms)
+
+
+Started POST "/events/2/join" for 104.166.200.55 at 2015-11-14 21:28:21 +0000
+Processing by EventsController#join as HTML
+  Parameters: {"event"=>{"id"=>"1", "user_id"=>"1"}, "id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEventMember Exists (0.2ms)[0m  SELECT  1 AS one FROM "event_members" WHERE ("event_members"."user_id" = 1 AND "event_members"."event_id" = 2) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/events/2/join" for 104.166.200.55 at 2015-11-14 21:28:39 +0000
+Processing by EventsController#join as HTML
+  Parameters: {"event"=>{"id"=>"1", "user_id"=>"3"}, "id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEventMember Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "event_members" WHERE ("event_members"."user_id" = 3 AND "event_members"."event_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "event_members" ("event_id", "user_id") VALUES (?, ?)  [["event_id", 2], ["user_id", 3]]
+  [1m[36m (83.3ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 2]]
+Completed 200 OK in 93ms (Views: 3.0ms | ActiveRecord: 84.3ms)
+
+
+Started POST "/events/2/join" for 104.166.200.55 at 2015-11-14 21:28:57 +0000
+Processing by EventsController#join as HTML
+  Parameters: {"event"=>{"id"=>"1", "user_id"=>"5"}, "id"=>"2"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEventMember Exists (0.2ms)[0m  SELECT  1 AS one FROM "event_members" WHERE ("event_members"."user_id" = 5 AND "event_members"."event_id" = 2) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "event_members" ("event_id", "user_id") VALUES (?, ?)[0m  [["event_id", 2], ["user_id", 5]]
+  [1m[35m (86.8ms)[0m  commit transaction
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 2]]
+Completed 200 OK in 97ms (Views: 3.1ms | ActiveRecord: 87.8ms)
+
+
+Started POST "/events/2/join" for 104.166.200.55 at 2015-11-14 21:29:03 +0000
+Processing by EventsController#join as HTML
+  Parameters: {"event"=>{"id"=>"1", "user_id"=>"4"}, "id"=>"2"}
+  [1m[35mEvent Load (0.2ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mEventMember Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "event_members" WHERE ("event_members"."user_id" = 4 AND "event_members"."event_id" = 2) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "event_members" ("event_id", "user_id") VALUES (?, ?)  [["event_id", 2], ["user_id", 4]]
+  [1m[36m (85.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 2]]
+Completed 200 OK in 94ms (Views: 2.3ms | ActiveRecord: 86.2ms)
+
+
+Started GET "/events/1" for 104.166.200.55 at 2015-11-14 21:35:14 +0000
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 1]]
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 104.166.200.55 at 2015-11-14 21:35:31 +0000
+Processing by EventsController#index as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 2]]
+[2015-11-14 21:47:51] FATAL SignalException: SIGTERM
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:174:in `select'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:174:in `block in start'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:32:in `start'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:162:in `start'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/handler/webrick.rb:34:in `run'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/server.rb:80:in `start'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/commands_tasks.rb:75:in `tap'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/commands_tasks.rb:75:in `server'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands.rb:17:in `<top (required)>'
+	/home/jckv22/honeyBadgerServer/honeyB/bin/rails:8:in `require'
+	/home/jckv22/honeyBadgerServer/honeyB/bin/rails:8:in `<top (required)>'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/client/rails.rb:28:in `load'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/client/rails.rb:28:in `call'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/client/command.rb:7:in `call'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/client.rb:28:in `run'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/bin/spring:49:in `<top (required)>'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/binstub.rb:11:in `load'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/binstub.rb:11:in `<top (required)>'
+	/home/jckv22/honeyBadgerServer/honeyB/bin/spring:13:in `require'
+	/home/jckv22/honeyBadgerServer/honeyB/bin/spring:13:in `<top (required)>'
+	bin/rails:3:in `load'
+	bin/rails:3:in `<main>'
+[2015-11-14 21:47:51] INFO  going to shutdown ...
+[2015-11-14 21:47:51] INFO  WEBrick::HTTPServer#start done.
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 10]]
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users" for 104.166.200.55 at 2015-11-14 21:40:34 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 1]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 2]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 2]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 3]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 4]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 4]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 5]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 6]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 6]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 7]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 7]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 8]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 8]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 9]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 9]]
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?  [[nil, 10]]
+  [1m[36mEvent Load (0.1ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."creator" = ?[0m  [["creator", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 10]]
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 4.0ms)
+Exiting
+[2015-11-14 21:48:43] INFO  WEBrick 1.3.1
+[2015-11-14 21:48:43] INFO  ruby 2.2.1 (2015-02-26) [x86_64-linux]
+[2015-11-14 21:48:43] INFO  WEBrick::HTTPServer#start: pid=58404 port=3000
