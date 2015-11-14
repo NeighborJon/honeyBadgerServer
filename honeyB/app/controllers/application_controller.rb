@@ -18,6 +18,8 @@ class ApplicationController < ActionController::API
 		end
 	end
 	
+	
+	
 	private
 	
 	def authenticate_user_from_token
