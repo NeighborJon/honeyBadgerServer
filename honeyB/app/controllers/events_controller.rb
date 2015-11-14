@@ -53,13 +53,15 @@ class EventsController < ApplicationController
   end
   
   def mapEvents
+
   	mapList = Array.new 
   	Event.all.each do |event|
  			if event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f)
  				if event.longitude < ((params[:longMin]).to_f) && event.longitude > ((params[:longMax]).to_f)
   						mapList << event
   				end
-  		end	
+  			end	
+  		end
   	end
   	render json: mapList
   end
@@ -72,7 +74,6 @@ class EventsController < ApplicationController
     	@event = @user.events.new(event_params)
 	
 		if @event.save
-			@event.members << @user
 			render json: @event, status: :created, location: @event		
 		end
 	rescue => error
