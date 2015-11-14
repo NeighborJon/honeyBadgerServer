@@ -24,12 +24,13 @@ m3 = Message.create(user_ID: '1', recieverID: '2', message: "It's neat how we ca
 	
 	user.create_account(email: user.email, password: "pass123")
 	
-	event = user.events.create(title: "Event##{i}",
+	user.events.create(title: "Event#{i}",
 
 					latitude: rndm.rand(38.950000..38.965000),
 					longitude: -1*rndm.rand(92.331000..92.33400),
 					start: DateTime.now,
-					description: "It's an event of fun and excitement")
+					category: "Shenanigan",
+					description: "It's an event of fun and excitement",)
 end
 
 5.times do |i|
