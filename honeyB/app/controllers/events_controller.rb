@@ -101,6 +101,7 @@ class EventsController < ApplicationController
     head :no_content
   end
   
+  # Join events /events/1/join
   def join
   	begin
   		@event = Event.find(params[:id])
