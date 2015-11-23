@@ -37,6 +37,9 @@ end
 	
 	event = Event.find(1)
 	user = User.find(i+2)
+	friend = User.find(i+1)
 	
+	user.friends << friend
+	friend.friends << user
 	event.members << user
 end
