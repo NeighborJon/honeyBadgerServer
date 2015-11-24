@@ -59,8 +59,7 @@ class EventsController < ApplicationController
   		if event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
  				if event.latitude < ((params[:latMin]).to_f) && event.latitude > ((params[:latMax]).to_f)
   						mapList << event
-  				end
-  			end	
+  				end	
   		end
   	end
   	render json: mapList
@@ -85,9 +84,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    @event = Event.find(params[:id])
-
-    if @event.update(event_params)
+	if @event.update(event_params)
       head :no_content
     else
       render json: @event.errors, status: :unprocessable_entity

@@ -1,5 +1,5 @@
 class FriendsController < ApplicationController
-  before_action only: [:show, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /friends/1
   # GET /friends/1.json
@@ -18,7 +18,7 @@ class FriendsController < ApplicationController
 	
 		@user.friends << @friend
 		@friend.friends << @user
-		render json: @user, status: :added, location: @user
+		render json: @user, status: :created, location: @user
 	rescue => error
 		#render :json => '{error : {"code" : 200, "message" : "must provide xVal/yVal"}}'
 		render :json => error.message
@@ -59,6 +59,14 @@ class FriendsController < ApplicationController
   end
   
   private
+    def set_user
+      begin
+      	@user = User.find(params[:id])
+      rescue => error
+      	render :json => error.message, status: :not_found
+      end
+    end
+    
     def friend_params
       params.require(:friend).permit(:friend_id)
     end
