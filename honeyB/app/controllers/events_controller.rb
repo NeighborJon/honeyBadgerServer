@@ -107,8 +107,7 @@ class EventsController < ApplicationController
   		if event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
  				if event.latitude < ((params[:latMin]).to_f) && event.latitude > ((params[:latMax]).to_f)
   						mapList << event
-  				end
-  			end	
+  				end	
   		end
   	render json: mapList
   end
@@ -118,10 +117,20 @@ class EventsController < ApplicationController
   def create
     begin
     	@user = User.find(params[:event][:creator])
-    	@event = @user.events.new(event_params)
+    	# verify number of events created today
+    	if @user.events.created_today.count <= 10
+    		# verify number of event created on the specified day
+    		if @user.events.created_on(params[:event][:start]).count <= 4
+    			@event = @user.events.new(event_params)
 	
-		if @event.save
-			render json: @event, status: :created, location: @event		
+				if @event.save
+					render json: @event, status: :created, location: @event		
+				end
+			else
+				render :json => '{error : Reached event creation limit for day provided}', status: :unprocessable_entity
+			end
+		else
+			render :json => '{error : Reached event daily limit}', status: :unprocessable_entity
 		end
 	rescue => error
 		#render :json => '{error : {"code" : 200, "message" : "must provide xVal/yVal"}}'
@@ -132,9 +141,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    @event = Event.find(params[:id])
-
-    if @event.update(event_params)
+	if @event.update(event_params)
       head :no_content
     else
       render json: @event.errors, status: :unprocessable_entity
