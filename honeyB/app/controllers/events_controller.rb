@@ -70,7 +70,9 @@ class EventsController < ApplicationController
   def create
     begin
     	@user = User.find(params[:event][:creator])
+    	# verify number of events created today
     	if @user.events.created_today.count <= 100
+    		# verify number of event created on the specified day
     		if @user.events.created_on(params[:event][:start]).count <= 10
     			@event = @user.events.new(event_params)
 	

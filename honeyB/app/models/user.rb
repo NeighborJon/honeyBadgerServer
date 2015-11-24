@@ -1,10 +1,12 @@
 class User < ActiveRecord::Base
 	has_many :messages, dependent: :destroy
 	has_many :events, foreign_key: "creator", dependent: :destroy do
+		# search through user's events to find the events created today
 		def created_today
 			where(:created_at => (Time.zone.now.beginning_of_day..Time.zone.now))
 		end
 		
+		# search through user's events to find the events created on date provided
 		def created_on(date)
 			day = date.to_datetime
 			where(:start => (day.beginning_of_day..day.end_of_day))
