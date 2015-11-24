@@ -180,3 +180,4 @@ class EventsController < ApplicationController
       params.require(:event).permit(:creator, :title, :longitude, :latitude, :start, :duration, :description, :category, :minReq, :private)
     end
 end
+end
