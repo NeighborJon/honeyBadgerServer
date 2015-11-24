@@ -70,10 +70,18 @@ class EventsController < ApplicationController
   def create
     begin
     	@user = User.find(params[:event][:creator])
-    	@event = @user.events.new(event_params)
+    	if @user.events.created_today.count <= 100
+    		if @user.events.created_on(params[:event][:start]).count <= 10
+    			@event = @user.events.new(event_params)
 	
-		if @event.save
-			render json: @event, status: :created, location: @event		
+				if @event.save
+					render json: @event, status: :created, location: @event		
+				end
+			else
+				render :json => '{error : Reached event creation limit for day provided}', status: :unprocessable_entity
+			end
+		else
+			render :json => '{error : Reached event daily limit}', status: :unprocessable_entity
 		end
 	rescue => error
 		#render :json => '{error : {"code" : 200, "message" : "must provide xVal/yVal"}}'
