@@ -40,10 +40,10 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    @user = User.find(params[:id])
-
     if @user.update(user_params)
-      head :no_content
+      if@user.account.update(account_params)
+      	head :no_content
+      end
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -52,15 +52,23 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
-    @user.destroy
+    begin
+    	@user.destroy
 
-    head :no_content
+    	head :no_content
+    rescue => error
+    	render :json => error.message
+    end
   end
 
   private
 
     def set_user
-      @user = User.find(params[:id])
+      begin
+      	@user = User.find(params[:id])
+      rescue => error
+      	render :json => error.message, status: :not_found
+      end
     end
 
     def user_params

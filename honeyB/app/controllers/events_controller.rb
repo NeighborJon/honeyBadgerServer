@@ -18,38 +18,86 @@ class EventsController < ApplicationController
   end
   
   def search
-		eventList = Array.new
-		Event.all.each do |event|
-		eventD = (event.start).strftime("%Y-%B-%d")
+	eventList = Array.new
+	Event.all.each do |event|
+		eventD = (event.start).strftime("%Y-%m-%d")
 		
-			if params[:eventTitle] != nil
-				if event.title == params[:eventTile]
+		#searching through 2 filters
+			if params[:eventTitle] != nil && params[:eventCat] != nil
+				if event.title == params[:eventTitle] && event.category == params[:eventCat]
 					eventList << event
 				end
-				if params[:eventCat] != nil
-					if event.title == params[:eventTitle] && event.category == params[:eventCat]
-						eventList << event
-					end
-				
-					if params[:eventDate] != nil
-						if event.title == params[:eventTile] && event.category == params[:eventCat] && eventD == params[:eventDate]
-							eventList << event
-						end
-					
-						if params[:longMin] != nil && params[:longMax] != nil && params[:latMin] != nil && params[:latMax] != nil
-							if event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude < ((params[:longMin]).to_f) && event.longitude > ((params[:longMax]).to_f)
-								eventList << event
-							end
-						end
-					end
+			elsif params[:eventTitle] != nil && params[:eventDate] != nil
+				if event.title == params[:eventTitle] && eventD == params[:eventDate]
+					eventList << event
 				end
-			else
-				if event.category == params[:eventCat]
+			elsif params[:eventTitle] != nil && params[:latMin] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
+				if event.title == params[:eventTitle] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+					eventList << event
+				end
+			elsif params[:eventCat] != nil && params[:eventDate] != nil
+				if event.category == params[:eventCat] && eventD == params[:eventDate]
+					eventList << event
+				end
+			elsif params[:eventCat] != nil && params[:latMin] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
+				if event.category == params[:eventCat] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+					eventList << event
+				end
+			elsif params[:eventDate] != nil && params[:latMin] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
+				if eventD == params[:eventDate] && params[:eventCat] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
 					eventList << event
 				end
 			end
-		end
-		render json: eventList
+			
+		#searching through 3 filters
+			if params[:eventTitle] != nil && params[:eventCat] != nil && params[:eventDate] != nil
+				if event.title == params[:eventTitle] && event.category == params[:eventCat] && eventD == params[:eventDate]
+					eventList << event
+				end
+			elsif params[:eventTitle] != nil && params[:eventCat] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
+				if event.title == params[:eventTitle] && event.category == params[:eventCat] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+					eventList << event
+				end
+			elsif params[:eventTitle] != nil && params[:eventDate] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
+				if event.title == params[:eventTitle] && eventD == params[:eventDate] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+					eventList << event
+				end
+			elsif params[:eventCat] != nil && params[:eventDate] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
+				if event.category == params[:eventCat] && eventD == params[:eventDate] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+					eventList << event
+				end
+			end
+			
+		#searching through all filters
+			if params[:eventTitle] != nil && params[:eventCat] != nil && params[:eventDate] != nil && params[:eventDate] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
+				if event.title == params[:eventTitle] && event.category == params[:eventCat] && eventD == params[:eventDate] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+					eventList << event
+				end
+			end
+			
+		#searching through a single filter
+			if params[:eventTitle] != nil
+				if event.title == params[:eventTitle]
+					eventList << event
+				end
+			elsif params[:eventCat] != nil
+				if event.category == params[:eventCat]
+					eventList << event
+				end
+			elsif params[:eventDate] != nil
+				if eventD == params[:eventDate]
+					eventList << event
+				end
+			elsif params[:latMin] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
+				if event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+					eventList << event
+				end
+			end
+				
+			
+	end
+	eventList = eventList.uniq
+	render json: eventList
   end
   
   def mapEvents
@@ -59,8 +107,7 @@ class EventsController < ApplicationController
   		if event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
  				if event.latitude < ((params[:latMin]).to_f) && event.latitude > ((params[:latMax]).to_f)
   						mapList << event
-  				end
-  			end	
+  				end	
   		end
   	render json: mapList
   end
@@ -70,10 +117,20 @@ class EventsController < ApplicationController
   def create
     begin
     	@user = User.find(params[:event][:creator])
-    	@event = @user.events.new(event_params)
+    	# verify number of events created today
+    	if @user.events.created_today.count <= 10
+    		# verify number of event created on the specified day
+    		if @user.events.created_on(params[:event][:start]).count <= 4
+    			@event = @user.events.new(event_params)
 	
-		if @event.save
-			render json: @event, status: :created, location: @event		
+				if @event.save
+					render json: @event, status: :created, location: @event		
+				end
+			else
+				render :json => '{error : Reached event creation limit for day provided}', status: :unprocessable_entity
+			end
+		else
+			render :json => '{error : Reached event daily limit}', status: :unprocessable_entity
 		end
 	rescue => error
 		#render :json => '{error : {"code" : 200, "message" : "must provide xVal/yVal"}}'
@@ -84,9 +141,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    @event = Event.find(params[:id])
-
-    if @event.update(event_params)
+	if @event.update(event_params)
       head :no_content
     else
       render json: @event.errors, status: :unprocessable_entity
