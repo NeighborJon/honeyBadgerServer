@@ -62,7 +62,6 @@ class EventsController < ApplicationController
   				end
   			end	
   		end
-  	end
   	render json: mapList
   end
 
