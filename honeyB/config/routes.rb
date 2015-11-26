@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get :mapEvents, controller: 'events'
   post 'events/:id/join', to: 'events#join'
   get :search, controller: 'events'
-  post 'friends/:id', to: 'friends#create'
+  post 'friends/:id', to: 'friends#reply', as: :friend_reply
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
