@@ -26,10 +26,12 @@ ActiveRecord::Schema.define(version: 20151127022429) do
   add_index "accounts", ["user_id"], name: "index_accounts_on_user_id"
 
   create_table "event_invites", force: :cascade do |t|
-    t.integer "event_id"
-    t.integer "receiver_id"
-    t.boolean "accepted",    default: false
-    t.string  "token",       default: "test"
+    t.integer  "event_id"
+    t.integer  "receiver_id"
+    t.boolean  "accepted",    default: false
+    t.string   "token",       default: "test"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "event_invites", ["event_id", "receiver_id"], name: "index_event_invites_on_event_id_and_receiver_id", unique: true
@@ -37,8 +39,10 @@ ActiveRecord::Schema.define(version: 20151127022429) do
   add_index "event_invites", ["receiver_id"], name: "index_event_invites_on_receiver_id"
 
   create_table "event_members", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "event_members", ["event_id"], name: "index_event_members_on_event_id"
@@ -64,10 +68,12 @@ ActiveRecord::Schema.define(version: 20151127022429) do
   add_index "events", ["creator"], name: "index_events_on_creator"
 
   create_table "friend_invites", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "receiver_id"
-    t.string  "token",       default: "test"
-    t.boolean "accepted",    default: false
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.string   "token",       default: "test"
+    t.boolean  "accepted",    default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "friend_invites", ["receiver_id"], name: "index_friend_invites_on_receiver_id"
@@ -75,8 +81,10 @@ ActiveRecord::Schema.define(version: 20151127022429) do
   add_index "friend_invites", ["sender_id"], name: "index_friend_invites_on_sender_id"
 
   create_table "friendships", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "friend_id"
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "friendships", ["friend_id"], name: "index_friendships_on_friend_id"

@@ -7,7 +7,7 @@ class CreateFriendInvites < ActiveRecord::Migration
       t.boolean :accepted, default: false
       t.index [:sender_id, :receiver_id], unique: true
       
-      timestamps null: false
+      t.timestamps null: false
     end
   end
 end
