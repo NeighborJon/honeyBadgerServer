@@ -162,9 +162,60 @@ class EventsController < ApplicationController
   	begin
   		@event = Event.find(params[:id])
   		@user = User.find(params[:event][:user_id])
+  		
+  		if @event.private == true
+  			if (params[:event][:accept]).present?
+  				if (params[:event][:token]).present?
+  					@invite = EventInvite.find(params[:event][:invite_id])
+  					
+  					if (params[:event][:token]) == @invite.token
+  						if (params[:event][:accept]) == "false"
+  							@message = Message.create(user_ID: @user.id, recieverID: @event.creator, message: "event invite declined")
+							@invite.destroy
+							return
+  						end
+  						
+  						# All private invite checks pass.  continue as normal join event
+  					else
+  						render :json => '{error : token invalid}', status: :unprocessable_entity
+  						return
+  					end
+  				else
+  					render :json => '{error : token missing}', status: :unprocessable_entity
+  					return
+  				end
+  			else
+  				render :json => '{error : accept missing.  Private events require additional data}', status: :unprocessable_entity
+  				return
+  			end
+  		end
+  		
   	
   		if @event.members << @user
+  			if @event.private
+  				@message = Message.create(user_ID: @user.id, recieverID: @event.creator, message: "event invite declined")
+  				@invite.destroy
+  			end
+  			
   			render json: @event, location: @event
+  		end
+  	rescue => error
+  		render :json => error.message
+  	end
+  end
+  
+  # Invite events /events/1/invite
+  def invite
+  	begin
+  		@event = Event.find(params[:id])
+  		@receiver = User.find(params[:event][:receiver])
+  		@invite = EventInvite.new(event_id:@event.id, receiver_id:@receiver.id)
+  		
+  		
+  		if @invite.save
+  			@receiver.event_invites << @invite
+  		else
+  			render :json => @invite.errors, status: :unprocessable_entity
   		end
   	rescue => error
   		render :json => error.message

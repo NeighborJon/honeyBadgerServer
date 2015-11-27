@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get :recievedMessages, controller: 'messages'
   get :mapEvents, controller: 'events'
   post 'events/:id/join', to: 'events#join'
+  post 'events/:id/invite', to: 'events#invite'
   get :search, controller: 'events'
   post 'friends/:id', to: 'friends#reply', as: :friend_reply
   

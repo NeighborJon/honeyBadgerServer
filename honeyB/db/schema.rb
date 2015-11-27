@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151126021758) do
+ActiveRecord::Schema.define(version: 20151127022429) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20151126021758) do
   end
 
   add_index "accounts", ["user_id"], name: "index_accounts_on_user_id"
+
+  create_table "event_invites", force: :cascade do |t|
+    t.integer "event_id"
+    t.integer "receiver_id"
+    t.boolean "accepted",    default: false
+    t.string  "token",       default: "test"
+  end
+
+  add_index "event_invites", ["event_id", "receiver_id"], name: "index_event_invites_on_event_id_and_receiver_id", unique: true
+  add_index "event_invites", ["event_id"], name: "index_event_invites_on_event_id"
+  add_index "event_invites", ["receiver_id"], name: "index_event_invites_on_receiver_id"
 
   create_table "event_members", id: false, force: :cascade do |t|
     t.integer "user_id"

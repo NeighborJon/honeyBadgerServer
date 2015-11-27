@@ -4,6 +4,8 @@ class CreateEventMembers < ActiveRecord::Migration
     	t.belongs_to :user, index: true
     	t.belongs_to :event, index: true
     	t.index [:user_id, :event_id], unique: true
+    	
+    	t.timestamps null: false
     end
   end
 end

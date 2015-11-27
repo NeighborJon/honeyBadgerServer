@@ -6,6 +6,8 @@ class CreateFriendInvites < ActiveRecord::Migration
       t.string :token, default: "test"
       t.boolean :accepted, default: false
       t.index [:sender_id, :receiver_id], unique: true
+      
+      timestamps null: false
     end
   end
 end
