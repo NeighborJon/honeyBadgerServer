@@ -16,15 +16,24 @@ class UsersController < ApplicationController
   end
   
   def uSearch
-  	if params[:fsearch] != nil
-  		find(:all, :conditions => ['fName LIKE ?', params[:fsearch]])
-  	elsif params[:lsearch] != nil
-  		find(:all, :conditions => ['lName LIKE ?', params[:lsearch]])
-  	elsif params[:lsearch] != nil && params[:fsearch] != nil
-  		find(:all, :conditions => ['fName LIKE ? AND lName LIKE ?', params[:fsearch], params[:lsearch]])
-  	else
-  		find(:all)
-  	end
+  	userList = Array.new
+  	User.all.each do |user|
+	  	if params[:fsearch] != nil && params[:lsearch] == nil
+	  		if user.fName.start_with?(params[:fsearch])
+	  			userList << user
+	  		end
+	  	elsif params[:lsearch] != nil && params[:fsearch] == nil
+	  		if user.lName.start_with?(params[:lsearch])
+	  			userList << user
+	  		end
+	  	elsif params[:lsearch] != nil && params[:fsearch] != nil
+	  		if user.fName.start_with?(params[:fsearch]) && user.lName.start_with?(params[:lsearch])
+	  			userList << user
+	  		end
+	  	end
+	end
+	userList = userList.uniq
+	render json: userList
   end
 
   # POST /users
