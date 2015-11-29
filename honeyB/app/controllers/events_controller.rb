@@ -107,7 +107,7 @@ class EventsController < ApplicationController
   						mapList << event
   				end	
 		end
-  		end
+  		
   	end
   	render json: mapList
   end

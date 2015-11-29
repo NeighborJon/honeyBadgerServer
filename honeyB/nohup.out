@@ -23171,3 +23171,386 @@ Processing by EventsController#mapEvents as HTML
   [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
   [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 1]]
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 10]]
+Completed 200 OK in 18ms (Views: 15.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/mapEvents?longMin=-92.45179197&longMax=-92.23179197&latMin=38.78575637&latMax=39.00575637" for 107.77.89.33 at 2015-11-29 21:38:21 +0000
+Processing by EventsController#mapEvents as */*
+  Parameters: {"longMin"=>"-92.45179197", "longMax"=>"-92.23179197", "latMin"=>"38.78575637", "latMax"=>"39.00575637"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 10]]
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/mapEvents?longMin=-92.44134053647518&longMax=-92.22134053647518&latMin=38.82449559938986&latMax=39.04449559938986" for 107.77.89.33 at 2015-11-29 21:38:26 +0000
+Processing by EventsController#mapEvents as */*
+  Parameters: {"longMin"=>"-92.44134053647518", "longMax"=>"-92.22134053647518", "latMin"=>"38.82449559938986", "latMax"=>"39.04449559938986"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 10]]
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/mapEvents?longMin=-92.46076140612364&longMax=-92.24076140612364&latMin=38.85275333520145&latMax=39.07275333520145" for 107.77.89.33 at 2015-11-29 21:39:07 +0000
+Processing by EventsController#mapEvents as */*
+  Parameters: {"longMin"=>"-92.46076140612364", "longMax"=>"-92.24076140612364", "latMin"=>"38.85275333520145", "latMax"=>"39.07275333520145"}
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 7]]
+[2015-11-29 21:39:16] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+[2015-11-29 21:39:20] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 10]]
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/mapEvents?longMin=-92.46076140612364&longMax=-92.24076140612364&latMin=38.85275333520145&latMax=39.07275333520145" for 107.77.89.33 at 2015-11-29 21:39:07 +0000
+Processing by EventsController#mapEvents as */*
+  Parameters: {"longMin"=>"-92.46076140612364", "longMax"=>"-92.24076140612364", "latMin"=>"38.85275333520145", "latMax"=>"39.07275333520145"}
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 10]]
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/mapEvents?longMin=-92.49928060978651&longMax=-92.27928060978651&latMin=38.84766385297578&latMax=39.06766385297578" for 107.77.89.33 at 2015-11-29 21:39:11 +0000
+Processing by EventsController#mapEvents as */*
+  Parameters: {"longMin"=>"-92.49928060978651", "longMax"=>"-92.27928060978651", "latMin"=>"38.84766385297578", "latMax"=>"39.06766385297578"}
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?  [["event_id", 10]]
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/mapEvents?longMin=-92.53511492222547&longMax=-92.31511492222548&latMin=38.83812523829348&latMax=39.05812523829348" for 107.77.89.33 at 2015-11-29 21:39:12 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.4ms)
+
+
+Started GET "/mapEvents?longMin=-92.45179107&longMax=-92.23179107&latMin=38.78576367&latMax=39.00576367" for 107.77.89.33 at 2015-11-29 21:39:19 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.9ms)
+
+
+Started GET "/mapEvents?longMin=-92.45179107&longMax=-92.23179107&latMin=38.78576367&latMax=39.00576367" for 107.77.89.33 at 2015-11-29 21:39:26 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+[2015-11-29 21:39:28] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+[2015-11-29 21:39:40] FATAL SignalException: SIGTERM
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:174:in `select'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:174:in `block in start'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:32:in `start'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:162:in `start'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/handler/webrick.rb:34:in `run'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/server.rb:80:in `start'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/commands_tasks.rb:80:in `block in server'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/commands_tasks.rb:75:in `tap'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/commands_tasks.rb:75:in `server'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/railties-4.2.4/lib/rails/commands.rb:17:in `<top (required)>'
+	/home/jckv22/honeyBadgerServer/honeyB/bin/rails:8:in `require'
+	/home/jckv22/honeyBadgerServer/honeyB/bin/rails:8:in `<top (required)>'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/client/rails.rb:28:in `load'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/client/rails.rb:28:in `call'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/client/command.rb:7:in `call'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/client.rb:28:in `run'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/bin/spring:49:in `<top (required)>'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/binstub.rb:11:in `load'
+	/home/jckv22/.rvm/gems/ruby-2.2.1/gems/spring-1.4.0/lib/spring/binstub.rb:11:in `<top (required)>'
+	/home/jckv22/honeyBadgerServer/honeyB/bin/spring:13:in `require'
+	/home/jckv22/honeyBadgerServer/honeyB/bin/spring:13:in `<top (required)>'
+	bin/rails:3:in `load'
+	bin/rails:3:in `<main>'
+[2015-11-29 21:39:40] INFO  going to shutdown ...
+[2015-11-29 21:39:40] INFO  WEBrick::HTTPServer#start done.
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.6ms)
+Exiting
+[2015-11-29 21:40:12] INFO  WEBrick 1.3.1
+[2015-11-29 21:40:12] INFO  ruby 2.2.1 (2015-02-26) [x86_64-linux]
+[2015-11-29 21:40:12] INFO  WEBrick::HTTPServer#start: pid=33318 port=3000
+[2015-11-29 21:40:25] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+[2015-11-29 21:41:08] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+[2015-11-29 21:42:14] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+[2015-11-29 21:42:39] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:15 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+[2015-11-29 21:42:57] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+[2015-11-29 21:42:59] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+=> Booting WEBrick
+=> Rails 4.2.4 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Ctrl-C to shutdown server
+
+
+Started GET "/mapEvents?longMin=-92.45178622&longMax=-92.23178622&latMin=38.78576478&latMax=39.00576478" for 104.166.200.55 at 2015-11-29 21:40:23 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.0ms)
+
+
+Started GET "/mapEvents?longMin=-92.45183833&longMax=-92.23183833&latMin=38.78598061&latMax=39.00598061" for 104.166.200.55 at 2015-11-29 21:41:06 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.1ms)
+
+
+Started GET "/mapEvents?longMin=-92.45183833&longMax=-92.23183833&latMin=38.78598061&latMax=39.00598061" for 104.166.200.55 at 2015-11-29 21:42:13 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (21.2ms)
+
+
+Started GET "/events" for 104.166.200.55 at 2015-11-29 21:42:25 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.5ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (16.8ms)
+
+
+Started GET "/mapEvents?longMin=-92.45183833&longMax=-92.23183833&latMin=38.78598061&latMax=39.00598061" for 104.166.200.55 at 2015-11-29 21:42:39 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.5ms)
+
+
+Started GET "/mapEvents?longMin=-92.42515374034643&longMax=-92.20515374034643&latMin=38.749336165846685&latMax=38.969336165846684" for 104.166.200.55 at 2015-11-29 21:42:57 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.3ms)
+
+
+Started GET "/mapEvents?longMin=-92.43059627771378&longMax=-92.21059627771378&latMin=38.790010824562806&latMax=39.010010824562805" for 104.166.200.55 at 2015-11-29 21:42:58 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.6ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.3ms)
+
+
+Started GET "/mapEvents?longMin=-92.42938827782869&longMax=-92.2093882778287&latMin=38.82267415199475&latMax=39.042674151994746" for 104.166.200.55 at 2015-11-29 21:43:01 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+[2015-11-29 21:43:02] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.4ms)
+
+
+Started GET "/users" for 104.166.200.55 at 2015-11-29 21:43:08 +0000
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 1]]
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 1]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 2]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 2]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 3]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 3]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 4]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 4]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 4]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 4]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 5]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 5]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 5]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 6]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 6]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 6]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 6]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 7]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 7]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 7]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 7]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 8]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 8]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 9]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 9]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 9]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 9]]
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = ?[0m  [[nil, 10]]
+  [1m[35mEvent Load (0.1ms)[0m  SELECT "events".* FROM "events" WHERE "events"."creator" = ?  [["creator", 10]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "event_members" ON "users"."id" = "event_members"."user_id" WHERE "event_members"."event_id" = ?[0m  [["event_id", 10]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN "friendships" ON "users"."id" = "friendships"."friend_id" WHERE "friendships"."user_id" = ?  [["user_id", 10]]
+Completed 200 OK in 112ms (Views: 91.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/mapEvents" for 104.166.200.55 at 2015-11-29 21:43:18 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.7ms)
+
+
+Started GET "/mapEvents?longMin=-92.45182497&longMax=-92.23182497&latMin=38.78568925&latMax=39.005689249999996" for 104.166.200.55 at 2015-11-29 21:43:39 +0000
+
+SyntaxError (/home/jckv22/honeyBadgerServer/honeyB/app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/events_controller.rb:183: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /home/jckv22/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+[2015-11-29 21:43:41] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:17 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+[2015-11-29 21:44:03] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+[2015-11-29 21:44:27] ERROR Errno::ECONNRESET: Connection reset by peer @ io_fillbuf - fd:12 
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `eof?'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:80:in `run'
+	/home/jckv22/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
