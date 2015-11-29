@@ -5,6 +5,7 @@ class FriendInvite < ActiveRecord::Base
 	validates_uniqueness_of :sender, :scope => :receiver
 	validate :already_friend
 	validate :friend_not_self
+	validate :user_not_blocked
 	
 	def already_friend
 		sender.friends.each do |friend|
@@ -18,5 +19,13 @@ class FriendInvite < ActiveRecord::Base
     	if sender.id == receiver.id
       		errors.add("Can't friend yourself")
     	end
+	end
+	
+	def user_not_blocked
+		sender.blocked.each do |blocked|
+			if blocked.id == receiver.id
+				errors.add("Can't invite blocked user")
+			end
+		end
 	end
 end
