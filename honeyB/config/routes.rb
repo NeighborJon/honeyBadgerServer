@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :events, except: [:new, :edit]
   resources :users, except: [:new, :edit]
   resources :friends, except: [:new, :edit]
+  resources :blocked_users, path: '/blocked', except: [:new, :edit]
   
   get :token, controller: 'application'
   get :recievedMessages, controller: 'messages'

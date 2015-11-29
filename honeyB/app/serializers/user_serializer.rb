@@ -4,6 +4,7 @@ class UserSerializer < ActiveModel::Serializer
   has_many :events
   has_many :attending
   has_many :friends, serializer: FriendSerializer
+  has_many :blocked, serializer: BlockedUserSerializer
   has_many :friend_invites
   has_many :event_invites
 end

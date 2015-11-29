@@ -16,12 +16,20 @@ class User < ActiveRecord::Base
 	has_one :account, dependent: :destroy
 	has_many :event_members
 	has_many :attending, :through => :event_members, source: :event
+	
 	has_many :friendships
 	has_many :friends, :through => :friendships
 	has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
 	has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+	
+	has_many :blocked_users
+	has_many :blocked, :through => :blocked_users
+	has_many :inverse_blocked_users, :class_name => "BlockedUser", :foreign_key => :blocked
+	has_many :inverse_blocked, :through => :inverse_blocked_users, :source => :user
+	
 	has_many :friend_invites, :foreign_key => "receiver_id"
 	has_many :inverse_friend_invites, :class_name => "FriendInvite", :foreign_key => "sender_id"
+	
 	has_many :event_invites, :foreign_key => "receiver_id"
 	has_many :inverse_event_invites, :class_name => "EventInvite", :foreign_key => "event_id"
 end
