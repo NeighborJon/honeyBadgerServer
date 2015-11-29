@@ -105,9 +105,10 @@ class EventsController < ApplicationController
   	mapList = Array.new 
   	Event.all.each do |event|
   		if event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
- 				if event.latitude < ((params[:latMin]).to_f) && event.latitude > ((params[:latMax]).to_f)
+ 				if event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f)
   						mapList << event
   				end	
+		end
   		end
   	render json: mapList
   end
@@ -179,5 +180,4 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:creator, :title, :longitude, :latitude, :start, :duration, :description, :category, :minReq, :private)
     end
-end
 end
