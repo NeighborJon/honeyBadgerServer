@@ -44,3 +44,9 @@ end
 	friend.friends << user
 	event.members << user
 end
+
+user = User.find(3)
+user2 = User.find(1)
+invite = FriendInvite.create(sender_id: user.id, receiver_id: user2.id)
+
+user2.friend_invites << invite

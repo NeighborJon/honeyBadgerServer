@@ -6,14 +6,17 @@ Rails.application.routes.draw do
   resources :events, except: [:new, :edit]
   resources :users, except: [:new, :edit]
   resources :friends, except: [:new, :edit]
+  resources :blocked_users, path: '/blocked', except: [:new, :edit]
   
   get :token, controller: 'application'
   get :recievedMessages, controller: 'messages'
   get :mapEvents, controller: 'events'
   post 'events/:id/join', to: 'events#join'
+  post 'events/:id/invite', to: 'events#invite'
   get :search, controller: 'events'
-  post 'friends/:id', to: 'friends#create'
   get :uSearch, controller: 'users'
+  post 'friends/:id', to: 'friends#reply', as: :friend_reply
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
