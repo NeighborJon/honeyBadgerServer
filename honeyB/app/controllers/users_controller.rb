@@ -14,6 +14,27 @@ class UsersController < ApplicationController
   def show
     render json: @user
   end
+  
+  def uSearch
+  	userList = Array.new
+  	User.all.each do |user|
+	  	if params[:fsearch] != nil && params[:lsearch] == nil
+	  		if user.fName.start_with?(params[:fsearch])
+	  			userList << user
+	  		end
+	  	elsif params[:lsearch] != nil && params[:fsearch] == nil
+	  		if user.lName.start_with?(params[:lsearch])
+	  			userList << user
+	  		end
+	  	elsif params[:lsearch] != nil && params[:fsearch] != nil
+	  		if user.fName.start_with?(params[:fsearch]) && user.lName.start_with?(params[:lsearch])
+	  			userList << user
+	  		end
+	  	end
+	end
+	userList = userList.uniq
+	render json: userList
+  end
 
   # POST /users
   # POST /users.json

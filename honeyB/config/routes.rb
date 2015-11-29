@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post 'events/:id/join', to: 'events#join'
   get :search, controller: 'events'
   post 'friends/:id', to: 'friends#create'
+  get :uSearch, controller: 'users'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

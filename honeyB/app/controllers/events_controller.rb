@@ -12,8 +12,6 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-  
-  
     render json: @event
   end
   
@@ -110,6 +108,7 @@ class EventsController < ApplicationController
   				end	
 		end
   		end
+  	end
   	render json: mapList
   end
 
@@ -170,12 +169,13 @@ class EventsController < ApplicationController
   		render :json => error.message
   	end
   end
+  
 
   private
 
-    def set_event
+   def set_event
       @event = Event.find(params[:id])
-    end
+	end   
 
     def event_params
       params.require(:event).permit(:creator, :title, :longitude, :latitude, :start, :duration, :description, :category, :minReq, :private)
