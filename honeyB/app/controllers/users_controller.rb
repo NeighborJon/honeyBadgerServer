@@ -35,6 +35,19 @@ class UsersController < ApplicationController
 	userList = userList.uniq
 	render json: userList
   end
+  
+  def expTest
+  	memberList = Array.new
+  	User.all.each do |user|
+  		event = Event.find_by(user.id)
+  		if user.id == event.creator
+  			member = event.members.first
+  			memberList << member
+  		end
+  	end
+  	memberList.first.shenaniganExp += 10.0
+  	render json: memberList
+  end
 
   # POST /users
   # POST /users.json
