@@ -30,7 +30,7 @@ class EventsController < ApplicationController
 					eventList << event
 				end
 			elsif params[:eventTitle] != nil && params[:latMin] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
-				if event.title == params[:eventTitle] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+				if event.title == params[:eventTitle] && event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
 					eventList << event
 				end
 			elsif params[:eventCat] != nil && params[:eventDate] != nil
@@ -38,11 +38,11 @@ class EventsController < ApplicationController
 					eventList << event
 				end
 			elsif params[:eventCat] != nil && params[:latMin] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
-				if event.category == params[:eventCat] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+				if event.category == params[:eventCat] && event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
 					eventList << event
 				end
 			elsif params[:eventDate] != nil && params[:latMin] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
-				if eventD == params[:eventDate] && params[:eventCat] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+				if eventD == params[:eventDate] && params[:eventCat] && event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
 					eventList << event
 				end
 			end
@@ -53,22 +53,22 @@ class EventsController < ApplicationController
 					eventList << event
 				end
 			elsif params[:eventTitle] != nil && params[:eventCat] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
-				if event.title == params[:eventTitle] && event.category == params[:eventCat] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+				if event.title == params[:eventTitle] && event.category == params[:eventCat] && event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
 					eventList << event
 				end
 			elsif params[:eventTitle] != nil && params[:eventDate] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
-				if event.title == params[:eventTitle] && eventD == params[:eventDate] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+				if event.title == params[:eventTitle] && eventD == params[:eventDate] && event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
 					eventList << event
 				end
 			elsif params[:eventCat] != nil && params[:eventDate] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
-				if event.category == params[:eventCat] && eventD == params[:eventDate] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+				if event.category == params[:eventCat] && eventD == params[:eventDate] && event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
 					eventList << event
 				end
 			end
 			
 		#searching through all filters
 			if params[:eventTitle] != nil && params[:eventCat] != nil && params[:eventDate] != nil && params[:eventDate] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
-				if event.title == params[:eventTitle] && event.category == params[:eventCat] && eventD == params[:eventDate] && event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+				if event.title == params[:eventTitle] && event.category == params[:eventCat] && eventD == params[:eventDate] && event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
 					eventList << event
 				end
 			end
@@ -87,7 +87,7 @@ class EventsController < ApplicationController
 					eventList << event
 				end
 			elsif params[:latMin] != nil && params[:latMax] != nil && params[:longMin] != nil && params[:longMax] != nil
-				if event.lat > params[:latMin] && event.lat < params[:latMax] && event.long < params[:longMin] && event.long > params[:longMax]
+				if event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f) && event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
 					eventList << event
 				end
 			end
