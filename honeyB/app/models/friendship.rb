@@ -3,9 +3,9 @@ class Friendship < ActiveRecord::Base
 	belongs_to :friend, :class_name => "User"
 	
 	validates_uniqueness_of :user, :scope => :friend
-	validate :user_not_friend
+	validate :friend_not_self
 	
-	def user_not_friend
+	def friend_not_self
     	if user.id == friend.id
       		errors.add("Can't friend yourself")
     	end
