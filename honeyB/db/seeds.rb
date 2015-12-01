@@ -20,7 +20,7 @@ m2 = Message.create(user_ID: '2', recieverID: '1', message: 'We got a fucking mo
 m3 = Message.create(user_ID: '1', recieverID: '2', message: "It's neat how we can talk to each other")
 
 10.times do |i|
-	user = User.create(fName: "User#{i}", lName: "LastName#{i}", email: "user#{i}@example.com")
+	user = User.create(fName: "User#{i}", lName: "LastName#{i}", email: "user#{i}@example.com", shenaniganExp: 0, fitnessExp: 0, educationExp: 0, philanthropyExp: 0)
 	
 	user.create_account(email: user.email, password: "pass123")
 	
@@ -29,7 +29,7 @@ m3 = Message.create(user_ID: '1', recieverID: '2', message: "It's neat how we ca
 					latitude: rndm.rand(38.950000..38.965000),
 					longitude: -1*rndm.rand(92.331000..92.33400),
 					start: DateTime.now,
-					category: "Shenanigan",
+					category: "Philanthropy",
 					description: "It's an event of fun and excitement",)
 end
 

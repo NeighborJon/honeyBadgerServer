@@ -35,6 +35,46 @@ class UsersController < ApplicationController
 	userList = userList.uniq
 	render json: userList
   end
+  
+  def expTest
+  	memberList = Array.new
+  	User.all.each do |user|
+  		event = Event.find_by(user.id)
+  		if user.id == event.creator
+  			member = event.members
+  			member.all.each do |m|
+  				exp = m.shenaniganExp + 10.0
+  				m.update_attributes(:shenaniganExp => exp)
+  				memberList << m
+  			end
+  		end
+  	end
+  	render json: memberList
+  end
+  
+  def checkin
+  	@users = User.find(params[:user][:member_id])
+  	experience = 10.0
+  		event = Event.find_by(params[:user][:event_id])
+  		if event.creator != @users.id
+  			if (event.members.find_by(params[:user][:member_id])).present?
+  			
+	  			if params[:user][:cat].to_s == 'Shenanigan'
+	  				@users.shenaniganExp += experience
+	  				@users.update_attributes(:shenaniganExp => experience)
+	  			elsif params[:user][:cat] == 'Philanthropy'
+	  				@users.philanthropyExp += experience
+	  				@users.update_attributes(:philanthropyExp => experience)
+	  			elsif params[:user][:cat] == 'Fitness'
+	  				@users.fitnessExp += experience
+	  				@users.update_attributes(:fitnessExp => experience)
+	  			elsif params[:user][:cat] == 'Education'
+	  				@users.educationExp += experience
+	  				@users.update_attributes(:educationExp => experience)
+	  			end
+	  		end
+  		end
+  end
 
   # POST /users
   # POST /users.json
