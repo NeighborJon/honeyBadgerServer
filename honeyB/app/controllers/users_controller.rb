@@ -36,22 +36,6 @@ class UsersController < ApplicationController
 	render json: userList
   end
   
-  def expTest
-  	memberList = Array.new
-  	User.all.each do |user|
-  		event = Event.find_by(user.id)
-  		if user.id == event.creator
-  			member = event.members
-  			member.all.each do |m|
-  				exp = m.shenaniganExp + 10.0
-  				m.update_attributes(:shenaniganExp => exp)
-  				memberList << m
-  			end
-  		end
-  	end
-  	render json: memberList
-  end
-  
   def checkin
   	@users = User.find(params[:user][:member_id])
   	experience = 10.0
