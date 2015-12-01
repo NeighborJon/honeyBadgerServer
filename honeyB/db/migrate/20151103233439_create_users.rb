@@ -6,6 +6,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :lName
       t.string :email
       t.string :description
+      t.string :category
       t.float :shenaniganExp
       t.float :fitnessExp
       t.float :educationExp

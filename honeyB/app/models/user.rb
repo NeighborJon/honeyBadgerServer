@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 	end
 	
 	has_one :account, dependent: :destroy
+	
 	has_many :event_members
 	has_many :attending, :through => :event_members, source: :event
 	
@@ -32,4 +33,14 @@ class User < ActiveRecord::Base
 	
 	has_many :event_invites, :foreign_key => "receiver_id"
 	has_many :inverse_event_invites, :class_name => "EventInvite", :foreign_key => "event_id"
+	
+	validate :valid_category, on: :update
+	
+	def valid_category
+		if category.present?
+			if !Category.exists?(name: category)
+				errors.add(:category, "invalid category")
+			end
+		end
+	end
 end

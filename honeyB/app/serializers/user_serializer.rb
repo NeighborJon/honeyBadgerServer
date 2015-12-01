@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :fName, :lName, :description
+  attributes :id, :fName, :lName, :description, :category
   has_many :messages
   has_many :events
   has_many :attending

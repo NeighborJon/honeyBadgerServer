@@ -117,6 +117,7 @@ class EventsController < ApplicationController
   def create
     begin
     	@user = User.find(params[:event][:creator])
+    	
     	# verify number of events created today
     	if @user.events.created_today.count <= 10
     		# verify number of event created on the specified day
@@ -132,6 +133,8 @@ class EventsController < ApplicationController
 		else
 			render :json => '{error : Reached event daily limit}', status: :unprocessable_entity
 		end
+		
+		
 	rescue => error
 		#render :json => '{error : {"code" : 200, "message" : "must provide xVal/yVal"}}'
 		render :json => error.message
@@ -239,6 +242,6 @@ class EventsController < ApplicationController
 	end   
 
     def event_params
-      params.require(:event).permit(:creator, :title, :longitude, :latitude, :start, :duration, :description, :category, :minReq, :private)
+      params.require(:event).permit(:creator, :title, :longitude, :latitude, :start, :category, :duration, :description, :minReq, :maxReq, :private)
     end
 end
