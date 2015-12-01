@@ -38,7 +38,7 @@ class UsersController < ApplicationController
   
   def checkin
   	@users = User.find(params[:user][:member_id])
-  	experience = 10.0
+  	experience = 1.0
   		event = Event.find_by(params[:user][:event_id])
   		if event.creator != @users.id
   			if (event.members.find_by(params[:user][:member_id])).present?
