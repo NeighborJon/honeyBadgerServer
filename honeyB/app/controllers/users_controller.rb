@@ -35,6 +35,30 @@ class UsersController < ApplicationController
 	userList = userList.uniq
 	render json: userList
   end
+  
+  def checkin
+  	@users = User.find(params[:user][:member_id])
+  	experience = 10.0
+  		event = Event.find_by(params[:user][:event_id])
+  		if event.creator != @users.id
+  			if (event.members.find_by(params[:user][:member_id])).present?
+  			
+	  			if params[:user][:cat].to_s == 'Shenanigan'
+	  				@users.shenaniganExp += experience
+	  				@users.update_attributes(:shenaniganExp => experience)
+	  			elsif params[:user][:cat] == 'Philanthropy'
+	  				@users.philanthropyExp += experience
+	  				@users.update_attributes(:philanthropyExp => experience)
+	  			elsif params[:user][:cat] == 'Fitness'
+	  				@users.fitnessExp += experience
+	  				@users.update_attributes(:fitnessExp => experience)
+	  			elsif params[:user][:cat] == 'Education'
+	  				@users.educationExp += experience
+	  				@users.update_attributes(:educationExp => experience)
+	  			end
+	  		end
+  		end
+  end
 
   # POST /users
   # POST /users.json

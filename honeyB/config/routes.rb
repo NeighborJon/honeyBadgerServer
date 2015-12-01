@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   post 'friends/:id', to: 'friends#reply', as: :friend_reply
 
   
+  put 'events/:id/checkin', to: 'users#checkin'
+  get :expTest, controller: 'users'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

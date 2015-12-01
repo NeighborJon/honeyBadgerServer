@@ -56,10 +56,8 @@ ActiveRecord::Schema.define(version: 20151130234548) do
   add_index "event_invites", ["receiver_id"], name: "index_event_invites_on_receiver_id"
 
   create_table "event_members", id: false, force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "event_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "event_id"
   end
 
   add_index "event_members", ["event_id"], name: "index_event_members_on_event_id"
@@ -97,10 +95,8 @@ ActiveRecord::Schema.define(version: 20151130234548) do
   add_index "friend_invites", ["sender_id"], name: "index_friend_invites_on_sender_id"
 
   create_table "friendships", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "friend_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "friend_id"
   end
 
   add_index "friendships", ["friend_id"], name: "index_friendships_on_friend_id"
