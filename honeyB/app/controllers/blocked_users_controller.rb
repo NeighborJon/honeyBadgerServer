@@ -31,6 +31,11 @@ class BlockedUsersController < ApplicationController
   	render nothing: true, status: 501;
   end
   
+  # PATCH  Not implemented
+  def update
+  	render nothing: true, status: 501;
+  end
+  
   # POST /friends/
   def create
   	begin

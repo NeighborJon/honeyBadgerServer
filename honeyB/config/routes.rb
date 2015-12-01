@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get :mapEvents, controller: 'events'
   post 'events/:id/join', to: 'events#join'
   post 'events/:id/invite', to: 'events#invite'
+  post 'events/:id/leave', to: 'events#leave'
   get :search, controller: 'events'
   get :uSearch, controller: 'users'
   post 'friends/:id', to: 'friends#reply', as: :friend_reply

@@ -203,6 +203,17 @@ class EventsController < ApplicationController
   	end
   end
   
+  def leave
+	begin
+  		@event = Event.find(params[:id])
+  		@user = User.find(params[:event][:user_id])
+  	
+  		@event.members.delete(@user)
+	rescue => error
+		render :json => error.message
+	end
+  end
+  
   # Invite events /events/1/invite
   def invite
   	begin
