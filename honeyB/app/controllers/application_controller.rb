@@ -11,11 +11,6 @@ class ApplicationController < ActionController::API
 		authenticate_with_http_basic do |email, password|
 			account = Account.find_by(email: email)
 			if account && account.password == password
-
-
-#		decode = Base64.decode64(params[:encode])
-#		tempCreds = decode.split(':')
-#			if decode != nil
 				render json: { token: account.auth_token } 
 			else
 				render json: { error: 'Incorrect credentials' }, status: 401
