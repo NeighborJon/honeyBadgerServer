@@ -14,6 +14,5 @@ class CreateEvents < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_reference :events, :creator, references: :users
   end
 end

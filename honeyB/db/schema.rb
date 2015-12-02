@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127230017) do
+ActiveRecord::Schema.define(version: 20151130234548) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer  "user_id",    null: false
@@ -35,6 +35,12 @@ ActiveRecord::Schema.define(version: 20151127230017) do
   add_index "blocked_users", ["blocked_id"], name: "index_blocked_users_on_blocked_id"
   add_index "blocked_users", ["user_id", "blocked_id"], name: "index_blocked_users_on_user_id_and_blocked_id", unique: true
   add_index "blocked_users", ["user_id"], name: "index_blocked_users_on_user_id"
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "event_invites", force: :cascade do |t|
     t.integer  "event_id"
@@ -71,7 +77,6 @@ ActiveRecord::Schema.define(version: 20151127230017) do
     t.boolean  "private",     default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
-    t.integer  "creator_id"
   end
 
   add_index "events", ["creator"], name: "index_events_on_creator"
@@ -112,6 +117,7 @@ ActiveRecord::Schema.define(version: 20151127230017) do
     t.string   "lName"
     t.string   "email"
     t.string   "description"
+    t.string   "category"
     t.float    "shenaniganExp"
     t.float    "fitnessExp"
     t.float    "educationExp"

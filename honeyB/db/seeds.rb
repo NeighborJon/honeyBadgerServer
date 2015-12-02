@@ -19,6 +19,12 @@ m1 = Message.create(user_ID: '1', recieverID: '2', message: 'Get a fucking move 
 m2 = Message.create(user_ID: '2', recieverID: '1', message: 'We got a fucking move on it')
 m3 = Message.create(user_ID: '1', recieverID: '2', message: "It's neat how we can talk to each other")
 
+
+Category.create(name: "Philanthropy")
+Category.create(name: "Shenanigan")
+Category.create(name: "Education")
+Category.create(name: "Fitness")
+
 50.times do |i|
 	user = User.create(fName: "User#{i}", lName: "LastName#{i}", email: "user#{i}@example.com", shenaniganExp: 0, fitnessExp: 0, educationExp: 0, philanthropyExp: 0)
 	
@@ -44,4 +50,3 @@ end
 	friend.friends << user
 	event.members << user
 end
-
