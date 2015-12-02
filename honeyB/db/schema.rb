@@ -56,8 +56,10 @@ ActiveRecord::Schema.define(version: 20151130234548) do
   add_index "event_invites", ["receiver_id"], name: "index_event_invites_on_receiver_id"
 
   create_table "event_members", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "event_id"
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "event_members", ["event_id"], name: "index_event_members_on_event_id"
@@ -70,13 +72,11 @@ ActiveRecord::Schema.define(version: 20151130234548) do
     t.float    "longitude",                   null: false
     t.float    "latitude",                    null: false
     t.datetime "start",                       null: false
-    t.integer   "duration"
+    t.string   "duration"
     t.string   "description"
     t.string   "category"
-    t.integer  "minReq",		default: 0
-    t.integer  "maxReq",		default: 50
+    t.integer  "minReq"
     t.boolean  "private",     default: false
-    t.boolean  "completed",		default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
@@ -97,8 +97,10 @@ ActiveRecord::Schema.define(version: 20151130234548) do
   add_index "friend_invites", ["sender_id"], name: "index_friend_invites_on_sender_id"
 
   create_table "friendships", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "friend_id"
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "friendships", ["friend_id"], name: "index_friendships_on_friend_id"

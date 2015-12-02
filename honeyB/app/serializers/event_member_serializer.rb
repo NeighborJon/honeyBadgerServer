@@ -1,3 +1,3 @@
 class EventMemberSerializer < ActiveModel::Serializer
-  attributes :id, :fName, :lName, :checkedin
+  attributes :id, :fName, :lName
 end
