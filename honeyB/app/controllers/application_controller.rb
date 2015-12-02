@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
 		authenticate_with_http_basic do |email, password|
 			account = Account.find_by(email: email)
 			if account && account.password == password
-				render json:  account.auth_token 
+				render json: { token:  account.auth_token }
 			else
 				render json: { error: 'Incorrect credentials' }, status: 401
 			end
