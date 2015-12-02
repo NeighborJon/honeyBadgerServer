@@ -83,7 +83,8 @@ class EventsController < ApplicationController
 				if event.category == params[:eventCat]
 					eventList << event
 				end
-			elsif params[:eventDate] != nil && params[:eventTitle] == nil && params[:eventCat] == nil &&  params[:latMax] == nil && params[:longMin] == nil && params[:longMax] == nil
+
+			elsif params[:eventDate] != nil && params[:eventTitle] == nil && params[:eventCat] == nil && params[:latMin] == nil && params[:latMax] == nil && params[:longMin] == nil && params[:longMax] == nil
 				if eventD == params[:eventDate]
 					eventList << event
 				end

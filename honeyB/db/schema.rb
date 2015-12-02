@@ -70,11 +70,13 @@ ActiveRecord::Schema.define(version: 20151130234548) do
     t.float    "longitude",                   null: false
     t.float    "latitude",                    null: false
     t.datetime "start",                       null: false
-    t.string   "duration"
+    t.integer   "duration"
     t.string   "description"
     t.string   "category"
-    t.integer  "minReq"
+    t.integer  "minReq",		default: 0
+    t.integer  "maxReq",		default: 50
     t.boolean  "private",     default: false
+    t.boolean  "completed",		default: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
