@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :fName, :lName, :description, :category, :shenaniganExp, :philanthropyExp, :educationExp, :fitnessExp
+  attributes :id, :fName, :lName, :description, :avatar_path, :category, :shenaniganExp, :philanthropyExp, :educationExp, :fitnessExp
 
   has_many :messages
   has_many :events
