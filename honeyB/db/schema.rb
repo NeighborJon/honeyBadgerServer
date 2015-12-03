@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 20151130234548) do
     t.string   "lName"
     t.string   "email"
     t.string   "description"
+    t.string   "avatar_path"
     t.string   "category"
     t.float    "shenaniganExp"
     t.float    "fitnessExp"

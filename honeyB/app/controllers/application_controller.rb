@@ -12,6 +12,7 @@ class ApplicationController < ActionController::API
 			account = Account.find_by(email: email)
 			if account && account.password == password
 				render json: { token: account.auth_token } 
+
 			else
 				render json: { error: 'Incorrect credentials' }, status: 401
 			end

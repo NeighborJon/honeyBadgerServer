@@ -36,12 +36,15 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
-
-    if @message.save
-      render json: @message, status: :created, location: @message
-    else
-      render json: @message.errors, status: :unprocessable_entity
-    end
+	if @message.user_ID.present? && @message.recieverID.present?
+    		if @message.save
+		      render json: @message, status: :created, location: @message
+		else
+			render json: @message.errors, status: :unprocessable_entity
+		end
+	else
+		render json: "Need to send both a User_ID and a receiverID"
+	end
   end
 
   # PATCH/PUT /messages/1
