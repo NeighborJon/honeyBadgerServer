@@ -32,7 +32,7 @@ Category.create(name: "Fitness")
 	
 	user = User.create(fName: "User#{i}", lName: "LastName#{i}", email: "user#{i}@example.com",
 			description: "Bradey sucks dick and can't be beaten in his faggotry. It is rumored that long ago, there was a legendary suck-off competition. All of the lords of buttsex showed, but were turned away with disappointment when Bradey, Lord Shaft-Shaker, showed himself to be a competitor",
-			 shenaniganExp: 0, fitnessExp: 0, educationExp: 0, philanthropyExp: 0, avatar_path: "https://www.google.com/imgres?imgurl=http://vignette3.wikia.nocookie.net/inciclopedia/images/c/c8/Derp1.jpg/revision/latest%253Fcb%253D20110608183440&imgrefurl=http://inciclopedia.wikia.com/wiki/Derp&h=383&w=338&tbnid=1OxItsnlwASUuM:&docid=FTVEeQiPMTRp9M&ei=D3JeVpfPIYLy-AHUrYvQAg&tbm=isch&ved=0ahUKEwjXkrf_qbzJAhUCOT4KHdTWAioQMwgcKAAwAA")
+			 shenaniganExp: 0, fitnessExp: 0, educationExp: 0, philanthropyExp: 0, avatar_path: "http://vignette3.wikia.nocookie.net/inciclopedia/images/c/c8/Derp1.jpg/revision/latest?cb=20110608183440")
 	
 	user.create_account(email: user.email, password: "pass123")
 	
