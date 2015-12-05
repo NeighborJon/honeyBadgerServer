@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 		end
 	end
 	
-	has_one :account, dependent: :destroy
+	has_one :account, foreign_key: "user_id", dependent: :destroy
 	
 	has_many :event_members
 	has_many :attending, :through => :event_members, source: :event

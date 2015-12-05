@@ -5,14 +5,14 @@ class ApplicationController < ActionController::API
 	
 	#config.force_ssl = true
 
-	#before_filter :authenticate_user_from_token, except: [:token]
+	before_filter :authenticate_user_from_token, except: [:token]
 
 	def token
 		authenticate_with_http_basic do |email, password|
 			account = Account.find_by(email: email)
 
 			if account && account.is_password?(password)
-				render json: { token: account.auth_token } 
+				render json: { token: account.auth_token, user_id: account.user_id } 
 			else
 				render json: { error: 'Incorrect credentials' }, status: 401
 			end
