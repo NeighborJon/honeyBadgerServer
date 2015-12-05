@@ -13,8 +13,8 @@ class BlockedUsersController < ApplicationController
     render json: @user.blocked
   end
 
-  # DELETE /friends/1
-  # DELETE /friends/1.json
+  # DELETE /blocked/1
+  # DELETE /blocked/1.json
   def destroy
     begin
     	@block = User.find(params[:blocked][:blocked_id])
@@ -22,7 +22,7 @@ class BlockedUsersController < ApplicationController
 		@user.blocked.delete(@block)
 		render json: @user, status: :accepted, location: @user
 	rescue => error
-		render :json => error.message
+		render :json => error.message, status: :unprocessable_entity
 	end
   end
   
@@ -36,7 +36,7 @@ class BlockedUsersController < ApplicationController
   	render nothing: true, status: 501;
   end
   
-  # POST /friends/
+  # POST /blocked/
   def create
   	begin
   		@user = User.find(params[:blocked][:user_id])
@@ -44,7 +44,7 @@ class BlockedUsersController < ApplicationController
   		
 		@user.blocked << @block
   	rescue => error
-  		render :json => error.message
+  		render :json => error.message, status: :unprocessable_entity
   	end
   end
   

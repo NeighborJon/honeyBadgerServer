@@ -64,11 +64,9 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    if User.exists?(params[:user][:id])
-    	render :json => '{error : {"code" : 100, "message" : "email invalid or already taken"}}'
-    else
+	begin
     	@user = User.new(user_params)
-    	@account = @user.build_account(email: @user.email, password: :password)
+    	@account = @user.build_account(email: @user.email, password: params[:user][:password])
     	
     	if @account.save
     		if @user.save
@@ -80,6 +78,8 @@ class UsersController < ApplicationController
     	else
 			render json: @account.errors, status: :unprocessable_entity    	
     	end
+    rescue => error
+    	render :json => error.message, status: :unprocessable_entity
     end
   end
 
@@ -87,9 +87,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     if @user.update(user_params)
-      if@user.account.update(account_params)
-      	head :no_content
-      end
+      	if @user.account.update(account_params)
+      		head :no_content
+      	end
     else
       render json: @user.errors, status: :unprocessable_entity
     end

@@ -11,12 +11,14 @@ Rails.application.routes.draw do
   get :token, controller: 'application'
   get :recievedMessages, controller: 'messages'
   get :mapEvents, controller: 'events'
+  post 'blocked/:id', to: 'blocked_users#destroy'
   post 'events/:id/join', to: 'events#join'
   post 'events/:id/invite', to: 'events#invite'
   post 'events/:id/leave', to: 'events#leave'
   get :search, controller: 'events'
   get :uSearch, controller: 'users'
   post 'friends/:id', to: 'friends#reply', as: :friend_reply
+  post 'friends/:id/remove', to: 'friends#destroy'
 
   
   put 'events/:id/checkin', to: 'users#checkin'
