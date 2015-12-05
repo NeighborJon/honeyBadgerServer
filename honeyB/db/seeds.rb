@@ -17,8 +17,8 @@ catList = Array["Shenanigan", "Philanthropy", "Education", "Fitness"]
 #a2 = Account.create(user_ID: '2', email: 'user2@example.com', password: 'tamale24')
 
 
-m1 = Message.create(user_ID: '1', recieverID: '2', message: 'Get a fucking move on it')
-m2 = Message.create(user_ID: '2', recieverID: '1', message: 'We got a fucking move on it')
+m1 = Message.create(user_ID: '1', recieverID: '2', message: 'Test messages')
+m2 = Message.create(user_ID: '2', recieverID: '1', message: 'We got a test message')
 m3 = Message.create(user_ID: '1', recieverID: '2', message: "It's neat how we can talk to each other")
 
 
@@ -31,7 +31,7 @@ Category.create(name: "Fitness")
 	catNum = rndm.rand(0..3)
 	
 	user = User.create(fName: "User#{i}", lName: "LastName#{i}", email: "user#{i}@example.com",
-			description: "Bradey sucks dick and can't be beaten in his faggotry. It is rumored that long ago, there was a legendary suck-off competition. All of the lords of buttsex showed, but were turned away with disappointment when Bradey, Lord Shaft-Shaker, showed himself to be a competitor",
+			description: "Generic user description",
 			 shenaniganExp: 0, fitnessExp: 0, educationExp: 0, philanthropyExp: 0, avatar_path: "http://vignette3.wikia.nocookie.net/inciclopedia/images/c/c8/Derp1.jpg/revision/latest?cb=20110608183440")
 	
 	user.create_account(email: user.email, password: "pass123")

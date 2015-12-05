@@ -167,11 +167,13 @@ class EventsController < ApplicationController
   		@event = Event.find(params[:id])
   		@user = User.find(params[:event][:user_id])
   		
-  		if @event.private == true
+  		if (params[:event][:invite_id]).present?
+  			@invite = EventInvite.find(params[:event][:invite_id])
+  		end
+  		
+  		if @event.private == true || @invite.present?
   			if (params[:event][:accept]).present?
   				if (params[:event][:token]).present?
-  					@invite = EventInvite.find(params[:event][:invite_id])
-  					
   					if (params[:event][:token]) == @invite.token
   						if (params[:event][:accept]) == "false"
   							@message = Message.create(user_ID: @user.id, recieverID: @event.creator, message: "event invite declined")
@@ -196,7 +198,7 @@ class EventsController < ApplicationController
   		
   	
   		if @event.members << @user
-  			if @event.private
+  			if @invite.exists?
   				@message = Message.create(user_ID: @user.id, recieverID: @event.creator, message: "event invite declined")
   				@invite.destroy
   			end
