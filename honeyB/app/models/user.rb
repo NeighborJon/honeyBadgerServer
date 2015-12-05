@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	#has_secure_password
 	has_many :messages, dependent: :destroy
 	has_many :events, foreign_key: "creator", dependent: :destroy do
 		# search through user's events to find the events created today
