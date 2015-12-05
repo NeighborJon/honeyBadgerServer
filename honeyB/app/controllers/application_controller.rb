@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
 	
 	#config.force_ssl = true
 
-	before_filter :authenticate_user_from_token, except: [:token]
+	#before_filter :authenticate_user_from_token, except: [:token]
 
 	def token
 		authenticate_with_http_basic do |email, password|
