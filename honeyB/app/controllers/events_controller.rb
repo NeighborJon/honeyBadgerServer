@@ -233,7 +233,7 @@ class EventsController < ApplicationController
   			render :json => @invite.errors, status: :unprocessable_entity
   		end
   	rescue => error
-  		render :json => error.message
+  		render :json => error.message, status: :unprocessable_entity
   	end
   end
 

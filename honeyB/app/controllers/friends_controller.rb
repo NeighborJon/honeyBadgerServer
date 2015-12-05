@@ -59,7 +59,7 @@ class FriendsController < ApplicationController
     end
   end
 
-  # DELETE /friends/1
+  # DELETE /friends/1/remove
   # DELETE /friends/1.json
   def destroy
     begin
