@@ -25,7 +25,7 @@ class EventInvite < ActiveRecord::Base
 		owner = User.find(event.creator)
 		
 		owner.blocked.each do |blocked|
-			if blocked.id = receiver.id
+			if blocked.id == receiver.id
 				errors.add("Can't invite blocked user")
 			end
 		end
