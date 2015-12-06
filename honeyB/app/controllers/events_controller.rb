@@ -215,9 +215,9 @@ class EventsController < ApplicationController
   		if event.longitude > ((params[:longMin]).to_f) && event.longitude < ((params[:longMax]).to_f)
  				if event.latitude > ((params[:latMin]).to_f) && event.latitude < ((params[:latMax]).to_f)
 					if privateSetting == true
-						eventList << is_private(event, user.id)
+						mapList << is_private(event, user.id)
 					else
-						eventList << event
+						mapList << event
 					end
   				end	
 		end
