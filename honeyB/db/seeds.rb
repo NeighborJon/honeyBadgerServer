@@ -31,7 +31,9 @@ Category.create(name: "Fitness")
 	catNum = rndm.rand(0..3)
 	
 	user = User.create(fName: "User#{i}", lName: "LastName#{i}", email: "user#{i}@example.com",
-			description: "Bradey sucks dick and can't be beaten in his faggotry. It is rumored that long ago, there was a legendary suck-off competition. All of the lords of buttsex showed, but were turned away with disappointment when Bradey, Lord Shaft-Shaker, showed himself to be a competitor",
+			description: "Let's face it, I don't live the life of a rock-star or famous athlete ... but those guys are always getting caught cheating on their wives, so why would I want to live that life?
+
+It sure would make writing this more entertaining, and reading it would be much more fun too. I could tell you about all the exotic cities and expensive hotels I've stayed at while being on tour. All the parties, clubs, alcohol and drugs ... it would make for a much more interesting read.",
 			 shenaniganExp: 0, fitnessExp: 0, educationExp: 0, philanthropyExp: 0, avatar_path: "http://vignette3.wikia.nocookie.net/inciclopedia/images/c/c8/Derp1.jpg/revision/latest?cb=20110608183440")
 	
 	user.create_account(email: user.email, password: "pass123")
