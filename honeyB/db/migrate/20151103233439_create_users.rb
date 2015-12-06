@@ -2,8 +2,8 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :userName
-      t.string :fName
-      t.string :lName
+      t.string :fName, default: "User"
+      t.string :lName, default: "Loser"
       t.string :email
       t.string :description
       t.string :avatar_path
