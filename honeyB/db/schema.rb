@@ -117,8 +117,8 @@ ActiveRecord::Schema.define(version: 20151130234548) do
 
   create_table "users", force: :cascade do |t|
     t.string   "userName"
-    t.string   "fName"
-    t.string   "lName"
+    t.string   "fName",           default: "User"
+    t.string   "lName",           default: "Loser"
     t.string   "email"
     t.string   "description"
     t.string   "avatar_path"
@@ -127,8 +127,8 @@ ActiveRecord::Schema.define(version: 20151130234548) do
     t.float    "fitnessExp"
     t.float    "educationExp"
     t.float    "philanthropyExp"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
 end
