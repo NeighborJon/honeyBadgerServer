@@ -76,7 +76,6 @@ class EventsController < ApplicationController
 		#searching through a single filter
 			if params[:eventTitle] != nil && params[:eventCat] == nil && params[:eventDate] == nil && params[:eventDate] == nil && params[:latMax] == nil && params[:longMin] == nil && params[:longMax] == nil
 			if event.title == params[:eventTitle]
-					eventList << "Event"
 					eventList << event
 				end
 			elsif params[:eventCat] != nil && params[:eventTitle] == nil && params[:eventDate] == nil && params[:latMax] == nil && params[:longMin] == nil && params[:longMax] == nil
