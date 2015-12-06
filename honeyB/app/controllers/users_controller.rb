@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+	skip_before_filter :authenticate_user_from_token, only: [:create]
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
@@ -68,11 +70,11 @@ class UsersController < ApplicationController
     	@user = User.new(user_params)
     	@account = @user.build_account(email: @user.email, password: params[:user][:password])
     	
-    	if @account.save
-    		if @user.save
+    	if @user.save
+    		if @account.save
       			render json: @user, status: :created, location: @user
     		else
-    			@account.destroy
+    			@user.destroy
      			render json: @user.errors, status: :unprocessable_entity
     		end
     	else
