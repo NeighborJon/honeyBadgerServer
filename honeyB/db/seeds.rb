@@ -27,7 +27,9 @@ Category.create(name: "Shenanigan")
 Category.create(name: "Education")
 Category.create(name: "Fitness")
 
-50.times do |i|
+
+
+(1..20).each do |i|
 	catNum = rndm.rand(0..3)
 	
 	user = User.create(fName: "User#{i}", lName: "LastName#{i}", email: "user#{i}@example.com",
