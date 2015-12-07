@@ -88,9 +88,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     if @user.update(user_params)
-      	if @user.account.update(account_params)
+      	#if @user.account.update(account_params)
       		head :no_content
-      	end
+      	#end
     else
       render json: @user.errors, status: :unprocessable_entity
     end

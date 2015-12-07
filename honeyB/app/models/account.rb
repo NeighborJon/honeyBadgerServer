@@ -4,7 +4,7 @@ class Account < ActiveRecord::Base
 	
 	validates :email, uniqueness: true, presence: true
 	validates :password, presence: true, length: { minimum: 2 }
-	before_create :encrypt_password
+#	before_create :encrypt_password
 	validate :encrypt_password, on: :update
 	
 	def encrypt_password
