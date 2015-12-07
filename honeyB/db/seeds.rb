@@ -24,24 +24,26 @@ Category.create(name: "Fitness")
 
 
 
-(1..50).each do |i|
+(1..101).each do |i|
 	catNum = rndm.rand(0..3)
 	fnameNum = rndm.rand(0..(fnameList.length-1))
 	lnameNum = rndm.rand(0..(lnameList.length-1))
 	email = fnameList[fnameNum].downcase+"."+lnameList[lnameNum].downcase+rndm.rand(0..200).to_s+"@example.com"
 	
 	
-	user = User.create(fName: fnameList[fnameNum], lName: lnameList[lnameNum], email: email,
+	user = User.new(fName: fnameList[fnameNum], lName: lnameList[lnameNum], email: email,
 			description: "Generic user description",
 			 shenaniganExp: 0, fitnessExp: 0, educationExp: 0, philanthropyExp: 0, avatar_path: "http://clickmedix.com/home/wp-content/uploads/2011/12/504px-Android_robot-252x300.png")
 
 	
-	user.create_account(email: user.email, password: "pass123")
+	account = user.build_account(email: user.email, password: "pass123")
+	user.save
+	account.save
 	
 	user.events.create(title: "Event#{i}",
 					duration: 1,
-					latitude: rndm.rand(38.950000..38.985000),
-					longitude: -1*rndm.rand(92.331000..92.33800),
+					latitude: rndm.rand(38.860000..39.000000),
+					longitude: -1*rndm.rand(92.250000..92.400000),
 					start: DateTime.new(2015,12,6,12).advance(:days => +rndm.rand(0..40), :hours => +rndm.rand(0..12)),
 					category: catList[catNum],
 					description: "It's an event of fun and excitement",)
