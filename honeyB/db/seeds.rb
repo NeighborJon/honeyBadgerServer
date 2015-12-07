@@ -9,8 +9,21 @@
 rndm = Random.new(Time.now.to_f)
 
 catList = Array["Shenanigan", "Philanthropy", "Education", "Fitness"]
-fnameList = Array["Jon", "AJ", "Brent", "Miles", "Jeff", "Joe", "Sarah", "Jennifer", "Katie", "Dana", "Bill", "Heath", "Tom", "Jarret", "Erika", "Mark", "Julie", "Mary", "Kelly", "Beth", "Carrie", "Catherine", "Laura", "Lara"]
+fnameList = Array["Jon", "AJ", "Brent", "Faith", "Miles", "Jeff", "Bradey", "Joe", "Sarah", "Jennifer", "Katie", "Dana", "Bill", "Heath", "Tom", "Jarret", "Erika", "Mark", "Julie", "Mary", "Kelly", "Beth", "Carrie", "Catherine", "Laura", "Lara"]
 lnameList = Array["Williams", "Johnson", "Rodgers", "Brady", "Manning", "Smith", "Jefferson", "Washington", "James", "Anthony", "Bradley", "Dempsey", "Altidore", "McGwire", "Jordan", "Bird", "Charles", "Maclin", "Moss", "Marino", "Perry"]
+eventList = []  
+eventList << {"title" => "Basketball Game", "category" => "Fitness", "description" => "Looking for people to play hoops with"}
+eventList << {"title" => "CS1000 Study Group", "category" => "Education", "description" => "Studying for final"}
+eventList << {"title" => "Pub Crawl", "category" => "Shenanigan", "description" => "Look at me.  I'm Mr Meeseeks"}
+eventList << {"title" => "Steelers game", "category" => "Fitness", "description" => "Watching the Steelers win"}
+eventList << {"title" => "Soup Kitchen", "category" => "Philanthropy", "description" => "Unlimited Taco Soup!!!"}
+eventList << {"title" => "Habitat for Humanities", "category" => "Philanthropy", "description" => "Helping build some homes"}
+eventList << {"title" => "House Party", "category" => "Shenanigan", "description" => "Kid n Play will be there"}
+eventList << {"title" => "Christmas Party", "category" => "Shenanigan", "description" => "Free Eggnog"}
+eventList << {"title" => "Yoga", "category" => "Fitness", "description" => ""}
+eventList << {"title" => "Ultimate Frisbee", "category" => "Fitness", "description" => "It will be fun"}
+eventList << {"title" => "Calc Study Group", "category" => "Education", "description" => "Studying for final"}
+
 
 m1 = Message.create(user_ID: '1', recieverID: '2', message: 'Test messages')
 m2 = Message.create(user_ID: '2', recieverID: '1', message: 'We got a test message')
@@ -26,6 +39,7 @@ Category.create(name: "Fitness")
 
 (1..50).each do |i|
 	catNum = rndm.rand(0..3)
+	eventNum = rndm.rand(0..eventList.length-1)
 	fnameNum = rndm.rand(0..(fnameList.length-1))
 	lnameNum = rndm.rand(0..(lnameList.length-1))
 	email = fnameList[fnameNum].downcase+"."+lnameList[lnameNum].downcase+rndm.rand(0..200).to_s+"@example.com"
@@ -38,13 +52,13 @@ Category.create(name: "Fitness")
 	
 	user.create_account(email: user.email, password: "pass123")
 	
-	user.events.create(title: "Event#{i}",
+	user.events.create(title: eventList[eventNum]["title"],
 					duration: 1,
-					latitude: rndm.rand(38.950000..38.985000),
-					longitude: -1*rndm.rand(92.331000..92.33800),
+					latitude: rndm.rand(38.860000..39.000000),
+					longitude: -1*rndm.rand(92.250000..92.400000),
 					start: DateTime.new(2015,12,6,12).advance(:days => +rndm.rand(0..40), :hours => +rndm.rand(0..12)),
-					category: catList[catNum],
-					description: "It's an event of fun and excitement",)
+					category: eventList[eventNum]["category"],
+					description: eventList[eventNum]["description"])
 end
 
 10.times do |i|
