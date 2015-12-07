@@ -24,6 +24,15 @@ eventList << {"title" => "Yoga", "category" => "Fitness", "description" => ""}
 eventList << {"title" => "Ultimate Frisbee", "category" => "Fitness", "description" => "It will be fun"}
 eventList << {"title" => "Calc Study Group", "category" => "Education", "description" => "Studying for final"}
 
+u1 = User.create(fName: "Bradey", lName: "Whitlock", email: "bradey@example.com", description: "Bradey's Bio", shenaniganExp: 0, fitnessExp: 0, educationExp: 0, philanthropyExp: 0, avatar_path: "http://clickmedix.com/home/wp-content/uploads/2011/12/504px-Android_robot-252x300.png")
+u2 = User.create(fName: "AJ", lName: "Dolan", email: "aj@example.com", description: "AJ's Bio", shenaniganExp: 0, fitnessExp: 0, educationExp: 0, philanthropyExp: 0, avatar_path: "http://clickmedix.com/home/wp-content/uploads/2011/12/504px-Android_robot-252x300.png")
+account1 = u1.build_account(email: u1.email, password: "pass123")
+account2 = u2.build_account(email: u1.email, password: "pass123")
+u1.save
+u2.save
+account1.save
+account1.save
+
 
 m1 = Message.create(user_ID: '1', recieverID: '2', message: 'Test messages')
 m2 = Message.create(user_ID: '2', recieverID: '1', message: 'We got a test message')
